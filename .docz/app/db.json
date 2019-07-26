@@ -1,0 +1,95 @@
+{
+  "config": {
+    "title": "First Aid Kits",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "version": "0.0.1",
+    "repository": null,
+    "native": false,
+    "codeSandbox": true,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "src/index.mdx",
+      "value": {
+        "name": "Welcome",
+        "route": "/",
+        "id": "6576455a124f9aaefd860597f03a8fe4",
+        "filepath": "src/index.mdx",
+        "link": "",
+        "slug": "src-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "welcome-to-the-styleguide-for-first-aid-log",
+            "depth": 1,
+            "value": "Welcome to the Styleguide for First Aid Log"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Title.mdx",
+      "value": {
+        "name": "Title",
+        "menu": "Components",
+        "id": "d9ee959f4e1173ecc4257dff702fad31",
+        "filepath": "src/components/Title.mdx",
+        "link": "",
+        "slug": "src-components-title",
+        "route": "/src-components-title",
+        "headings": [
+          {
+            "slug": "title-component",
+            "depth": 1,
+            "value": "Title Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "src/App.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [],
+          "actualName": "App"
+        }
+      ]
+    },
+    {
+      "key": "src/components/Title.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Title",
+          "methods": [],
+          "actualName": "Title",
+          "props": {
+            "text": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'Enter Title Here'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
