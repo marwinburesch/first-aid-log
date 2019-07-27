@@ -31,6 +31,30 @@
       }
     },
     {
+      "key": "src/components/Logo.mdx",
+      "value": {
+        "name": "Logo",
+        "menu": "Components",
+        "id": "7037a76a67415be8ec67dcedc1352f70",
+        "filepath": "src/components/Logo.mdx",
+        "link": "",
+        "slug": "src-components-logo",
+        "route": "/src-components-logo",
+        "headings": [
+          {
+            "slug": "logo-component",
+            "depth": 1,
+            "value": "Logo Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/Title.mdx",
       "value": {
         "name": "Title",
@@ -57,17 +81,6 @@
   ],
   "props": [
     {
-      "key": "src/App.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "App",
-          "methods": [],
-          "actualName": "App"
-        }
-      ]
-    },
-    {
       "key": "src/components/Title.js",
       "value": [
         {
@@ -88,6 +101,74 @@
               }
             }
           }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Logo.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Logo",
+          "methods": [],
+          "actualName": "Logo",
+          "props": {
+            "height": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'50px'",
+                "computed": false
+              }
+            },
+            "width": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'50px'",
+                "computed": false
+              }
+            },
+            "fill": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#EC3D2A'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/App.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [],
+          "actualName": "App"
+        }
+      ]
+    },
+    {
+      "key": "src/pages/Landing.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Landing",
+          "methods": [],
+          "actualName": "Landing"
         }
       ]
     }
