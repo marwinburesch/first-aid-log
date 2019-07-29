@@ -31,6 +31,30 @@
       }
     },
     {
+      "key": "src/components/Button.mdx",
+      "value": {
+        "name": "Button",
+        "menu": "Components",
+        "id": "94c04b4e4bd29ffbdeec8755c1a4c04f",
+        "filepath": "src/components/Button.mdx",
+        "link": "",
+        "slug": "src-components-button",
+        "route": "/src-components-button",
+        "headings": [
+          {
+            "slug": "button-component",
+            "depth": 1,
+            "value": "Button Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/Logo.mdx",
       "value": {
         "name": "Logo",
@@ -169,6 +193,37 @@
           "displayName": "Landing",
           "methods": [],
           "actualName": "Landing"
+        }
+      ]
+    },
+    {
+      "key": "src/components/Button.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "actualName": "Button",
+          "props": {
+            "firstResponse": {
+              "type": {
+                "name": "string"
+              },
+              "required": true,
+              "description": ""
+            },
+            "fill": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#59B375'",
+                "computed": false
+              }
+            }
+          }
         }
       ]
     }

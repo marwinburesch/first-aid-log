@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Title } from '../components/Title';
 import { Logo } from '../components/Logo';
 import { MainContent } from '../App';
+import { Button } from '../components/Button';
 
 const Description = styled.p`
   text-align: center;
@@ -21,6 +22,7 @@ export function Landing({ ...props }) {
           <br /> this app let's you quickly call a dedicated frist responder. In the future you can
           file and view first aid reports here too!
         </Description>
+        <Button firstResponse="tel:01234567890" fill="#59B375" />
       </MainContent>
     </>
   );
