@@ -1,0 +1,231 @@
+{
+  "config": {
+    "title": "First Aid Kits",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "version": "0.0.1",
+    "repository": null,
+    "native": false,
+    "codeSandbox": true,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "src/index.mdx",
+      "value": {
+        "name": "Welcome",
+        "route": "/",
+        "id": "6576455a124f9aaefd860597f03a8fe4",
+        "filepath": "src/index.mdx",
+        "link": "",
+        "slug": "src-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "welcome-to-the-styleguide-for-first-aid-log",
+            "depth": 1,
+            "value": "Welcome to the Styleguide for First Aid Log"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Button.mdx",
+      "value": {
+        "name": "Button",
+        "menu": "Components",
+        "id": "94c04b4e4bd29ffbdeec8755c1a4c04f",
+        "filepath": "src/components/Button.mdx",
+        "link": "",
+        "slug": "src-components-button",
+        "route": "/src-components-button",
+        "headings": [
+          {
+            "slug": "button-component",
+            "depth": 1,
+            "value": "Button Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Logo.mdx",
+      "value": {
+        "name": "Logo",
+        "menu": "Components",
+        "id": "7037a76a67415be8ec67dcedc1352f70",
+        "filepath": "src/components/Logo.mdx",
+        "link": "",
+        "slug": "src-components-logo",
+        "route": "/src-components-logo",
+        "headings": [
+          {
+            "slug": "logo-component",
+            "depth": 1,
+            "value": "Logo Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Title.mdx",
+      "value": {
+        "name": "Title",
+        "menu": "Components",
+        "id": "d9ee959f4e1173ecc4257dff702fad31",
+        "filepath": "src/components/Title.mdx",
+        "link": "",
+        "slug": "src-components-title",
+        "route": "/src-components-title",
+        "headings": [
+          {
+            "slug": "title-component",
+            "depth": 1,
+            "value": "Title Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "src/components/Title.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Title",
+          "methods": [],
+          "actualName": "Title",
+          "props": {
+            "text": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'Enter Title Here'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/Logo.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Logo",
+          "methods": [],
+          "actualName": "Logo",
+          "props": {
+            "height": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'50px'",
+                "computed": false
+              }
+            },
+            "width": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'50px'",
+                "computed": false
+              }
+            },
+            "fill": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#EC3D2A'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/App.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [],
+          "actualName": "App"
+        }
+      ]
+    },
+    {
+      "key": "src/pages/Landing.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Landing",
+          "methods": [],
+          "actualName": "Landing"
+        }
+      ]
+    },
+    {
+      "key": "src/components/Button.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "actualName": "Button",
+          "props": {
+            "firstResponse": {
+              "type": {
+                "name": "string"
+              },
+              "required": true,
+              "description": ""
+            },
+            "fill": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "'#59B375'",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
