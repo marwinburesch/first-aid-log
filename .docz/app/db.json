@@ -31,6 +31,54 @@
       }
     },
     {
+      "key": "src/components/Button.mdx",
+      "value": {
+        "name": "Button",
+        "menu": "Components",
+        "id": "94c04b4e4bd29ffbdeec8755c1a4c04f",
+        "filepath": "src/components/Button.mdx",
+        "link": "",
+        "slug": "src-components-button",
+        "route": "/src-components-button",
+        "headings": [
+          {
+            "slug": "button-component",
+            "depth": 1,
+            "value": "Button Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/Logo.mdx",
+      "value": {
+        "name": "Logo",
+        "menu": "Components",
+        "id": "7037a76a67415be8ec67dcedc1352f70",
+        "filepath": "src/components/Logo.mdx",
+        "link": "",
+        "slug": "src-components-logo",
+        "route": "/src-components-logo",
+        "headings": [
+          {
+            "slug": "logo-component",
+            "depth": 1,
+            "value": "Logo Component"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic Usage"
+          }
+        ]
+      }
+    },
+    {
       "key": "src/components/Title.mdx",
       "value": {
         "name": "Title",
@@ -64,30 +112,6 @@
           "displayName": "App",
           "methods": [],
           "actualName": "App"
-        }
-      ]
-    },
-    {
-      "key": "src/components/Title.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "Title",
-          "methods": [],
-          "actualName": "Title",
-          "props": {
-            "text": {
-              "type": {
-                "name": "string"
-              },
-              "required": false,
-              "description": "",
-              "defaultValue": {
-                "value": "'Enter Title Here'",
-                "computed": false
-              }
-            }
-          }
         }
       ]
     }
