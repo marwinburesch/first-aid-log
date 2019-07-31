@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import reportData from '../utils/__mock.json';
-import { RenderReportBox } from './Reports.js';
+import { ListItem } from './ListItem.js';
 
 const reports = reportData;
 
-export function List() {
-  console.log(reports);
+export function List({ onSelect }) {
   return (
     <>
-      {reports.map(report => (
-        <RenderReportBox report={report} />
-      ))}
+      {reports.map(report => {
+        return <ListItem report={report} onSelect={onSelect} />;
+      })}
     </>
   );
 }

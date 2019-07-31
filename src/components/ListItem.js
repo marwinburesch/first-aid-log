@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const ReportBoxShadow = styled.div``;
-
-const ReportBoxIndex = styled.div`
+export const ReportBoxIndex = styled.div`
   width: 22px;
   height: 22px;
   font-size: 9px;
@@ -18,7 +16,7 @@ const ReportBoxIndex = styled.div`
   left: -11px;
 `;
 
-const ReportBox = styled.div.attrs(props => ({
+export const ReportBox = styled.div.attrs(props => ({
   background: props.background || 'transparent'
 }))`
   width: 100%;
@@ -44,17 +42,17 @@ const ReportBox = styled.div.attrs(props => ({
   }
 `;
 
-// linear-gradient(to right, #f8f2ec 0%, #54b6d2 100%)
-
-export function RenderReportBox({ report }) {
-  function handleReportClick() {
-    return console.log(report);
+export function ListItem({ report, onSelect }) {
+  function handleOpen() {
+    onSelect(report);
   }
 
   return (
-    <ReportBox onClick={handleReportClick}>
-      <ReportBoxIndex>{report.index}</ReportBoxIndex>
-      {report.registered} {report.nameInjured}
-    </ReportBox>
+    <>
+      <ReportBox onClick={handleOpen}>
+        <ReportBoxIndex>{report.index}</ReportBoxIndex>
+        {report.registered} {report.nameInjured}
+      </ReportBox>
+    </>
   );
 }
