@@ -8,6 +8,7 @@ html, body {
 
     body {
         font-family: 'Lato', sans-serif;
+        
     }
 
     scene {

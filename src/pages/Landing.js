@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Title } from '../components/Title';
+import { Header } from '../components/Header';
 import { Logo } from '../components/Logo';
-import { MainContent } from '../App';
+import { MainContent } from '../components/MainContent';
 import { Button } from '../components/Button';
+import { Grid } from '../App';
 
 const Description = styled.p`
   text-align: center;
@@ -12,9 +13,9 @@ const Description = styled.p`
 
 export function Landing({ ...props }) {
   return (
-    <>
-      <Title text="First Aid Log" {...props} />
-      <MainContent>
+    <Grid>
+      <Header title="First Aid Log" {...props} />
+      <MainContent background="linear-gradient(to bottom, #ffffff 0%,#f8f2ec 100%);">
         <Logo height="75px" width="75px" fill="#59B375" />
         <Description>
           Welcome to First Aid Log,
@@ -24,6 +25,6 @@ export function Landing({ ...props }) {
         </Description>
         <Button firstResponse="tel:01234567890" fill="#59B375" />
       </MainContent>
-    </>
+    </Grid>
   );
 }
