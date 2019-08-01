@@ -93,3 +93,8 @@ export function ListItem({ report, onSelect }) {
     </>
   );
 }
+
+ListItem.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  report: PropTypes.object
+};

@@ -9,8 +9,12 @@ export function List({ onSelect }) {
   return (
     <>
       {reports.map(report => {
-        return <ListItem report={report} onSelect={onSelect} />;
+        return <ListItem key={report._id} report={report} onSelect={onSelect} />;
       })}
     </>
   );
 }
+
+List.propTypes = {
+  onSelect: PropTypes.func.isRequired
+};
