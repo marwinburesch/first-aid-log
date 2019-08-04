@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const ReportBoxIndex = styled.div`
   width: 22px;
@@ -16,9 +16,18 @@ const ReportBoxIndex = styled.div`
   left: -11px;
 `;
 
-const ReportBox = styled.div.attrs(props => ({
-  background: props.background || 'transparent'
-}))`
+const slideInLeft = keyframes`
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+const ReportBox = styled.div`
   width: 100%;
   max-width: 400px;
   height: 48px;
@@ -28,19 +37,20 @@ const ReportBox = styled.div.attrs(props => ({
   display: flex;
   align-items: center;
 
-  border-radius: 24px;
+  border-radius: 10px;
   font-size: 12px;
   text-align: center;
   border: solid #54b6d2 1px;
-  background: transparent;
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
   border: 1px solid #54b6d2;
   box-sizing: border-box;
   box-shadow: 0px 3px 0px #54b6d2;
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
+  animation-name: ${slideInLeft};
   &:hover {
-    background: linear-gradient(to right, #f8f2ec 0%, #54b6d2 100%);
+    background: linear-gradient(to right, #f8f2ec 0%, #96d2e3 100%);
     box-shadow: 0px 0px 0px;
     transform: translateY(3px);
   }
