@@ -18,14 +18,13 @@ export const Grid = styled.div`
 function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
 
-  useEffect(() => {
-    getReportsFromStorage();
-  }, [reports]);
+  // useEffect(() => {
+  //   getReportsFromStorage();
+  // }, [reports]);
 
   function handleOnSubmit(report) {
-    console.log(report);
-
     setReportsToStorage([report, ...reports]);
+    setReports(getReportsFromStorage());
   }
 
   return (
