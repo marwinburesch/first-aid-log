@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Sublabel from './TextSubtitle';
 
 const ModalDialog = styled.div`
   width: 70%;
@@ -18,20 +19,10 @@ const ModalDialog = styled.div`
 
 const Row = styled.div`
   position: relative;
-  /* background: lightgrey; */
   width: fit-content;
   height: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
-`;
-
-const TextSubtitle = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 1.8em;
-  font-size: 11px;
-  color: #c1b1aa;
-  border-top: solid 2px #c1b1aa;
 `;
 
 const Descr = styled.p`
@@ -68,24 +59,24 @@ export function ViewReport({ report, onClose }) {
     <Blur>
       <ModalDialog>
         <Row>
-          <TextSubtitle>ID</TextSubtitle>
           {report._id}
+          <Sublabel text="ID" />
         </Row>
         <Row>
-          <TextSubtitle>Date registered</TextSubtitle>
           {report.registered}
+          <Sublabel text="Date" />
         </Row>
         <Row>
-          <TextSubtitle>Injured</TextSubtitle>
           {report.nameInjured}
+          <Sublabel text="Name Injured" />
         </Row>
         <Row>
-          <TextSubtitle>First responder</TextSubtitle>
           {report.nameResponder}
+          <Sublabel text="First Responder" />
         </Row>
         <Row>
-          <TextSubtitle>Witnesses</TextSubtitle>
           {report.nameWitness}
+          <Sublabel text="Witness" />
         </Row>
         <Descr>{report.descr}</Descr>
       </ModalDialog>
