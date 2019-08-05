@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyles from './GlobalStyles';
 import { Landing } from './pages/Landing';
 import { ReportList } from './pages/ReportList';
+import { FileReport } from './pages/FileReport';
+import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
 
 export const Grid = styled.div`
   display: flex;
@@ -14,13 +16,27 @@ export const Grid = styled.div`
 `;
 
 function App() {
+  const [reports, setReports] = useState(getReportsFromStorage());
+
+  // useEffect(() => {
+  //   getReportsFromStorage();
+  // }, [reports]);
+
+  function handleOnSubmit(report) {
+    setReportsToStorage([report, ...reports]);
+    setReports(getReportsFromStorage());
+  }
+
   return (
     <>
       <Router>
         <GlobalStyles />
-        {/* menu */}
         <Switch>
-          <Route path="/rep" render={props => <ReportList {...props} />} />
+          <Route
+            path="/file"
+            render={props => <FileReport onSubmitReport={handleOnSubmit} {...props} />}
+          />
+          <Route path="/rep" render={props => <ReportList reports={reports} {...props} />} />
           <Route path="/" render={props => <Landing {...props} />} />
         </Switch>
       </Router>

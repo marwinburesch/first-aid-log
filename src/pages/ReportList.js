@@ -6,7 +6,7 @@ import { List } from '../components/List';
 import { Grid } from '../App';
 import { ViewReport } from '../components/ViewReport';
 
-export function ReportList({ ...props }) {
+export function ReportList({ reports, ...props }) {
   const [selectedReport, setSelectedReport] = React.useState(null);
 
   function handleSelect(report) {
@@ -17,7 +17,7 @@ export function ReportList({ ...props }) {
     <Grid>
       <Header title="Report List" {...props} />
       <MainContent background="linear-gradient(to bottom, #ffffff 0%,#f8f2ec 100%)">
-        <List onSelect={handleSelect} />
+        <List reports={reports} onSelect={handleSelect} />
       </MainContent>
 
       {selectedReport && (
