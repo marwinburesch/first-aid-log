@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Sublabel from './TextSubtitle';
+import Sublabel from './Sublable';
 
 const ModalDialog = styled.div`
   width: 70%;
