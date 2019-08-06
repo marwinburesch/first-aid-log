@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { MainContent } from '../components/MainContent';
-import { Grid } from '../App';
-import { Header } from '../components/Header';
 // import DatePicker from 'react-datepicker';
 
 const FormBox = styled.form`
-  width: 90%;
+  width: 100%;
   height: 100%;
-  background: white;
-  box-shadow: grey 0px 2px 4px;
-  border-radius: 10px;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  padding: 20px;
 `;
 
 const ButtonGroup = styled.div`
@@ -27,7 +21,34 @@ const StyledError = styled.div`
   font-size: 10px;
 `;
 
-export function FileReport({ history, onSubmitReport, ...props }) {
+const ModalDialog = styled.div`
+  width: 70%;
+  height: 85%;
+  z-index: 1;
+  color: #000;
+  background: white;
+  opacity: 1;
+  box-shadow: grey 0px 4px 4px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+`;
+
+const Blur = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(193, 177, 170, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export function FileReport({ onSubmitReport, onClose }) {
   const [formValues, SetFormValues] = useState({
     registered: '',
     nameInjured: '',
@@ -37,10 +58,6 @@ export function FileReport({ history, onSubmitReport, ...props }) {
   });
 
   const [errors, setErrors] = useState({});
-
-  function handleCancel() {
-    history.push('/');
-  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -95,14 +112,12 @@ export function FileReport({ history, onSubmitReport, ...props }) {
     };
 
     onSubmitReport(report);
-    history.push('/rep');
   }
 
   return (
     <>
-      <Grid>
-        <Header title="File a Report" {...props} />
-        <MainContent background="linear-gradient(to bottom, #ffffff 0%,#f8f2ec 100%)">
+      <Blur>
+        <ModalDialog>
           <FormBox onSubmit={handleSubmit}>
             <input
               name="registered"
@@ -141,13 +156,13 @@ export function FileReport({ history, onSubmitReport, ...props }) {
             {errors.descr && <StyledError>{errors.descr}</StyledError>}
             <ButtonGroup>
               <button type="submit">submit</button>
-              <button type="cancel" onClick={handleCancel}>
+              <button type="cancel" onClick={onClose}>
                 cancel
               </button>
             </ButtonGroup>
           </FormBox>
-        </MainContent>
-      </Grid>
+        </ModalDialog>
+      </Blur>
     </>
   );
 }

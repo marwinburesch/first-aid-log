@@ -4,8 +4,9 @@ import Sublabel from './Sublable';
 
 const ModalDialog = styled.div`
   width: 70%;
-  height: 75%;
+  height: 85%;
   z-index: 1;
+  color: #000;
   background: white;
   opacity: 1;
   box-shadow: grey 0px 4px 4px;
@@ -13,7 +14,6 @@ const ModalDialog = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
   z-index: 1;
 `;
 

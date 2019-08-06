@@ -10,9 +10,9 @@ const ReportBoxIndex = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #54b6d2;
+  background-color: #fff;
   position: absolute;
-  top: -1px;
+  top: -10px;
   left: -11px;
 `;
 
@@ -28,31 +28,31 @@ const slideInLeft = keyframes`
 `;
 
 const ReportBox = styled.div`
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
+  /* max-width: 400px; */
   height: 48px;
   min-height: 48px;
   margin-bottom: 20px;
-
+  margin-left: 10%;
   display: flex;
   align-items: center;
-
-  border-radius: 10px;
+  color: #000;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
   font-size: 12px;
   text-align: center;
-  border: solid #54b6d2 1px;
-  background: linear-gradient(to right, #fff 0%, transparent 100%);
-  border: 1px solid #54b6d2;
+  border: solid #fff 1px;
+  border-right: none;
+  background: transparent;
   box-sizing: border-box;
-  box-shadow: 0px 3px 0px #54b6d2;
+  box-shadow: 0px 4px 0px #fff;
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
   animation-name: ${slideInLeft};
   &:hover {
-    background: linear-gradient(to right, #f8f2ec 0%, #96d2e3 100%);
-    box-shadow: 0px 0px 0px;
-    transform: translateY(3px);
+    background: linear-gradient(to bottom, transparent 0%, rgba(233, 228, 226, 0.5) 100%);
+    transform: scale(1.03);
   }
 `;
 
@@ -92,11 +92,11 @@ export function ListItem({ report, onSelect }) {
       <ReportBox onClick={handleOpen}>
         <ReportBoxIndex>{report.index}</ReportBoxIndex>
         <DateBox>
-          <TextSubtitle>Date</TextSubtitle>
+          {/* <TextSubtitle>Date</TextSubtitle> */}
           {report.registered}
         </DateBox>
         <TextBox>
-          <TextSubtitle>Name</TextSubtitle>
+          {/* <TextSubtitle>Name</TextSubtitle> */}
           {report.nameInjured}
         </TextBox>
       </ReportBox>

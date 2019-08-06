@@ -1,12 +1,10 @@
 import React from 'react';
-import { Header } from '../components/Header';
-// import { Logo } from '../components/Logo';
-import { MainContent } from '../components/MainContent';
 import { List } from '../components/List';
-import { Grid } from '../App';
 import { ViewReport } from '../components/ViewReport';
+import { withRouter } from 'react-router-dom';
+import { Header } from '../components/Header';
 
-export function ReportList({ reports, ...props }) {
+export const ReportList = withRouter(function({ reports, history }) {
   const [selectedReport, setSelectedReport] = React.useState(null);
 
   function handleSelect(report) {
@@ -14,15 +12,13 @@ export function ReportList({ reports, ...props }) {
   }
 
   return (
-    <Grid>
-      <Header title="Report List" {...props} />
-      <MainContent background="linear-gradient(to bottom, #ffffff 0%,#f8f2ec 100%)">
-        <List reports={reports} onSelect={handleSelect} />
-      </MainContent>
+    <>
+      <Header title="List of Reports" />
+      <List reports={reports} onSelect={handleSelect} />
 
       {selectedReport && (
         <ViewReport report={selectedReport} onClose={() => setSelectedReport(null)} />
       )}
-    </Grid>
+    </>
   );
-}
+});
