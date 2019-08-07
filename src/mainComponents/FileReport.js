@@ -33,7 +33,6 @@ const ModalDialog = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  z-index: 1;
 `;
 
 const Blur = styled.div`
