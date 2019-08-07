@@ -9,6 +9,7 @@ const ReportBoxIndex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
@@ -36,10 +37,10 @@ const ReportBox = styled.div`
   margin-left: 10%;
   display: flex;
   align-items: center;
-  color: #000;
+  color: #fff;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   border: solid #fff 1px;
   border-right: none;
@@ -72,14 +73,6 @@ const TextBox = styled.div`
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-`;
-
-const TextSubtitle = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 1.4em;
-  font-size: 11px;
-  color: #a3a3a3;
 `;
 
 export function ListItem({ report, onSelect }) {

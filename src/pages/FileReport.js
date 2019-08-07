@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import DatePicker from 'react-datepicker';
+import newID from '../utils/newID';
 
 const FormBox = styled.form`
   width: 100%;
@@ -50,6 +50,7 @@ const Blur = styled.div`
 
 export function FileReport({ onSubmitReport, onClose }) {
   const [formValues, SetFormValues] = useState({
+    _id: '',
     registered: '',
     nameInjured: '',
     nameWitness: '',
@@ -104,6 +105,7 @@ export function FileReport({ onSubmitReport, onClose }) {
     }
 
     const report = {
+      _id: newID(formValues.registered),
       registered: formValues.registered,
       nameInjured: formValues.nameInjured,
       nameWitness: formValues.nameWitness,
@@ -120,6 +122,7 @@ export function FileReport({ onSubmitReport, onClose }) {
         <ModalDialog>
           <FormBox onSubmit={handleSubmit}>
             <input
+              type="date"
               name="registered"
               placeholder="Enter a date"
               value={formValues.registered}

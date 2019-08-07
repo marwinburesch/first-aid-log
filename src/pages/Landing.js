@@ -20,8 +20,6 @@ const ButtonGroup = styled.div`
 `;
 
 export const Landing = withRouter(function({ history, onAddClick }) {
-  console.log(history);
-
   function handleOnAddClick() {
     onAddClick(true);
   }

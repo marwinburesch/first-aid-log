@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyles from './GlobalStyles';
 import { Landing } from './pages/Landing';
@@ -31,6 +31,7 @@ function App() {
   function handleOnSubmit(report) {
     setReportsToStorage([report, ...reports]);
     setReports(getReportsFromStorage());
+    setShowAdd(null);
   }
 
   return (
