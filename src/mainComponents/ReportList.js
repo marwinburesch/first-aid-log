@@ -4,11 +4,12 @@ import { ViewReport } from '../components/ViewReport';
 import { withRouter } from 'react-router-dom';
 import { Header } from '../components/Header';
 
-export const ReportList = withRouter(function({ reports, history }) {
-  const [selectedReport, setSelectedReport] = React.useState(null);
+export const ReportList = withRouter(function({ reports, history, location }) {
+  const selectedReport =
+    location.hash && reports.find(report => report._id === location.hash.replace('#', ''));
 
   function handleSelect(report) {
-    setSelectedReport(report);
+    history.push(`/#${report._id}`);
   }
 
   return (
@@ -16,9 +17,7 @@ export const ReportList = withRouter(function({ reports, history }) {
       <Header title="List of Reports" />
       <List reports={reports} onSelect={handleSelect} />
 
-      {selectedReport && (
-        <ViewReport report={selectedReport} onClose={() => setSelectedReport(null)} />
-      )}
+      {selectedReport && <ViewReport report={selectedReport} onClose={() => history.push('/')} />}
     </>
   );
 });

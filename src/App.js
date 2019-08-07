@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyles from './GlobalStyles';
@@ -20,17 +20,16 @@ function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
   const [showAdd, setShowAdd] = useState(null);
 
-  // useEffect(() => {
-  //   getReportsFromStorage();
-  // }, [reports]);
+  useEffect(() => {
+    setReportsToStorage(reports);
+  }, [reports]);
 
   function handleAddClick(show) {
     setShowAdd(show);
   }
 
   function handleOnSubmit(report) {
-    setReportsToStorage([report, ...reports]);
-    setReports(getReportsFromStorage());
+    setReports([report, ...reports]);
     setShowAdd(null);
   }
 
