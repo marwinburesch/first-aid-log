@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyles from './GlobalStyles';
-import { Landing } from './pages/Landing';
-import { ReportList } from './pages/ReportList';
-import { FileReport } from './pages/FileReport';
+import { Landing } from './mainComponents/Landing';
+import { ReportList } from './mainComponents/ReportList';
+import { FileReport } from './mainComponents/FileReport';
 import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
+import { MainContent } from './components/MainContent';
 
 export const Grid = styled.div`
   display: flex;
@@ -17,30 +18,34 @@ export const Grid = styled.div`
 
 function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
+  const [showAdd, setShowAdd] = useState(null);
 
-  // useEffect(() => {
-  //   getReportsFromStorage();
-  // }, [reports]);
+  useEffect(() => {
+    setReportsToStorage(reports);
+  }, [reports]);
+
+  function handleAddClick(show) {
+    setShowAdd(show);
+  }
 
   function handleOnSubmit(report) {
-    setReportsToStorage([report, ...reports]);
-    setReports(getReportsFromStorage());
+    setReports([report, ...reports]);
+    setShowAdd(null);
   }
 
   return (
-    <>
-      <Router>
-        <GlobalStyles />
-        <Switch>
-          <Route
-            path="/file"
-            render={props => <FileReport onSubmitReport={handleOnSubmit} {...props} />}
-          />
-          <Route path="/rep" render={props => <ReportList reports={reports} {...props} />} />
-          <Route path="/" render={props => <Landing {...props} />} />
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <GlobalStyles />
+      <Grid>
+        <MainContent>
+          <Landing onAddClick={handleAddClick} />
+          <ReportList reports={reports} />
+          {showAdd && (
+            <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />
+          )}
+        </MainContent>
+      </Grid>
+    </Router>
   );
 }
 

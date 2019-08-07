@@ -9,10 +9,11 @@ const ReportBoxIndex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
   border-radius: 50%;
-  background-color: #54b6d2;
+  background-color: #fff;
   position: absolute;
-  top: -1px;
+  top: -10px;
   left: -11px;
 `;
 
@@ -28,31 +29,31 @@ const slideInLeft = keyframes`
 `;
 
 const ReportBox = styled.div`
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
+  /* max-width: 400px; */
   height: 48px;
   min-height: 48px;
   margin-bottom: 20px;
-
+  margin-left: 10%;
   display: flex;
   align-items: center;
-
-  border-radius: 10px;
-  font-size: 12px;
+  color: #fff;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: 14px;
   text-align: center;
-  border: solid #54b6d2 1px;
-  background: linear-gradient(to right, #fff 0%, transparent 100%);
-  border: 1px solid #54b6d2;
+  border: solid #fff 1px;
+  border-right: none;
+  background: transparent;
   box-sizing: border-box;
-  box-shadow: 0px 3px 0px #54b6d2;
+  box-shadow: 0px 4px 0px #fff;
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
   animation-name: ${slideInLeft};
   &:hover {
-    background: linear-gradient(to right, #f8f2ec 0%, #96d2e3 100%);
-    box-shadow: 0px 0px 0px;
-    transform: translateY(3px);
+    background: linear-gradient(to bottom, transparent 0%, rgba(233, 228, 226, 0.5) 100%);
+    transform: scale(1.03);
   }
 `;
 
@@ -74,14 +75,6 @@ const TextBox = styled.div`
   margin-bottom: 10px;
 `;
 
-const TextSubtitle = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 1.4em;
-  font-size: 11px;
-  color: #a3a3a3;
-`;
-
 export function ListItem({ report, onSelect }) {
   function handleOpen() {
     onSelect(report);
@@ -92,11 +85,11 @@ export function ListItem({ report, onSelect }) {
       <ReportBox onClick={handleOpen}>
         <ReportBoxIndex>{report.index}</ReportBoxIndex>
         <DateBox>
-          <TextSubtitle>Date</TextSubtitle>
+          {/* <TextSubtitle>Date</TextSubtitle> */}
           {report.registered}
         </DateBox>
         <TextBox>
-          <TextSubtitle>Name</TextSubtitle>
+          {/* <TextSubtitle>Name</TextSubtitle> */}
           {report.nameInjured}
         </TextBox>
       </ReportBox>
