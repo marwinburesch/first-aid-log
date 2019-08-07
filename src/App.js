@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyles from './GlobalStyles';
-import { Landing } from './pages/Landing';
-import { ReportList } from './pages/ReportList';
-import { FileReport } from './pages/FileReport';
+import { Landing } from './mainComponents/Landing';
+import { ReportList } from './mainComponents/ReportList';
+import { FileReport } from './mainComponents/FileReport';
 import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
 import { MainContent } from './components/MainContent';
 
