@@ -11,7 +11,8 @@ const ReportBoxIndex = styled.div`
   justify-content: center;
   color: #000;
   border-radius: 50%;
-  background-color: #fff;
+  border: solid 1px #fff;
+  background-color: #c1b1aa;
   position: absolute;
   top: -10px;
   left: -11px;
@@ -54,6 +55,7 @@ const ReportBox = styled.div`
   &:hover {
     background: linear-gradient(to bottom, transparent 0%, rgba(233, 228, 226, 0.5) 100%);
     transform: scale(1.03);
+    box-shadow: 0px 0px 0px #fff;
   }
 `;
 

@@ -27,7 +27,7 @@ export const Landing = withRouter(function({ history, onAddClick }) {
   return (
     <>
       <Header title="First Aid Log" />
-      <Logo height="75px" width="75px" fill="#fff" />
+      <Logo height="80px" width="100px" fill="#f5a099" />
       <Description>
         Welcome to First Aid Log,
         <br />
@@ -36,7 +36,7 @@ export const Landing = withRouter(function({ history, onAddClick }) {
       </Description>
       <ButtonGroup>
         <a href="tel:01234567890">
-          <Button />
+          <Button type="phone" />
         </a>
         <div onClick={handleOnAddClick}>
           <Button type="plus" />
