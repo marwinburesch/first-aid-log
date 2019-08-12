@@ -33,8 +33,8 @@ const ActionButton = styled.button`
 
 export function Button({ fill, width, type, ...props }) {
   const types = {
-    plus: '#7EC493',
-    phone: '#f5a099'
+    plus: '#96D2E3',
+    phone: '#81c596'
   };
 
   function getType(type) {

@@ -31,8 +31,8 @@ export const Landing = withRouter(function({ history, onAddClick }) {
       <Description>
         Welcome to First Aid Log,
         <br />
-        <br /> this app let's you quickly call a dedicated frist responder. In the future you can
-        file and view first aid reports here too!
+        <br /> this app let's you quickly call a dedicated frist responder. You can also file and
+        view first aid reports! Amazing.
       </Description>
       <ButtonGroup>
         <a href="tel:01234567890">

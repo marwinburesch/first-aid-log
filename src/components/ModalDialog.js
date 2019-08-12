@@ -7,8 +7,8 @@ export const ModalDialogCanvas = styled.div`
   z-index: 1;
   color: #000;
   background: white;
-  box-shadow: #96d2e3 3px 3px 0px;
-  border: solid #96d2e3 3px;
+  box-shadow: #54b6d2 3px 3px 0px;
+  border: solid #54b6d2 3px;
   border-radius: 10px;
   padding: 20px;
   display: flex;

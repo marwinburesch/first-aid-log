@@ -9,10 +9,10 @@ const ReportBoxIndex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: #fff;
   border-radius: 50%;
   border: solid 1px #fff;
-  background-color: #c1b1aa;
+  background-color: #96d2e3;
   position: absolute;
   top: -10px;
   left: -11px;
@@ -20,41 +20,39 @@ const ReportBoxIndex = styled.div`
 
 const slideInLeft = keyframes`
   from {
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
+    transform: translateX(-400px);
+    visibility: hidden;
   }
 
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
+    visibility: visible;
   }
 `;
 
 const ReportBox = styled.div`
-  width: 90%;
-  /* max-width: 400px; */
+  width: 85%;
   height: 48px;
   min-height: 48px;
   margin-bottom: 20px;
-  margin-left: 10%;
   display: flex;
   align-items: center;
   color: #fff;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 10px;
   font-size: 14px;
   text-align: center;
+  margin: 0px 3% 20px 3%;
   border: solid #fff 1px;
-  border-right: none;
   background: transparent;
   box-sizing: border-box;
   box-shadow: 0px 4px 0px #fff;
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
-  animation-name: ${slideInLeft};
+  animation-name: ${slideInLeft} 2s;
   &:hover {
     background: linear-gradient(to bottom, transparent 0%, rgba(233, 228, 226, 0.5) 100%);
-    transform: scale(1.03);
+    transform: translateY(3px);
     box-shadow: 0px 0px 0px #fff;
   }
 `;
@@ -86,14 +84,8 @@ export function ListItem({ report, onSelect }) {
     <>
       <ReportBox onClick={handleOpen}>
         <ReportBoxIndex>{report.index}</ReportBoxIndex>
-        <DateBox>
-          {/* <TextSubtitle>Date</TextSubtitle> */}
-          {report.registered}
-        </DateBox>
-        <TextBox>
-          {/* <TextSubtitle>Name</TextSubtitle> */}
-          {report.nameInjured}
-        </TextBox>
+        <DateBox>{report.registered}</DateBox>
+        <TextBox>{report.nameInjured}</TextBox>
       </ReportBox>
     </>
   );

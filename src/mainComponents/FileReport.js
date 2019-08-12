@@ -13,27 +13,27 @@ const FormBox = styled.form`
 
 const Input = styled.input`
   width: 60%;
-  border: solid 2px #96d2e3;
+  border: solid 1px #54b6d2;
   border-radius: 10px;
-  box-shadow: 0px 2px #96d2e3;
+  box-shadow: 0px 2px #54b6d2;
   font-size: 14px;
-  padding: 5px 10px 5px 10px;
-  margin-top: 10px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 30px;
   &:focus {
     outline: none;
   }
 `;
 
 const TextArea = styled.textarea`
-  margin-top: 10px;
-  border: solid 2px #96d2e3;
+  margin-top: 30px;
+  border: solid 2px #54b6d2;
   border-radius: 10px;
-  box-shadow: 0px 2px #96d2e3;
+  box-shadow: 0px 2px #54b6d2;
   width: 95%;
   font-size: 14px;
   align-self: center;
   resize: none;
-  height: 300px;
+  height: 130px;
   padding: 10px;
   &:focus {
     outline: none;
@@ -49,8 +49,9 @@ const ButtonGroup = styled.div`
 const Button = styled.button`
   border-radius: 10px;
   font-size: 14px;
-  border: solid 2px #96d2e3;
-  box-shadow: 0px 2px #96d2e3;
+  border: solid 2px #54b6d2;
+  box-shadow: 0px 2px #54b6d2;
+  background: transparent;
   margin: 5px;
   transition: all 0.1s;
   cursor: pointer;
@@ -65,6 +66,7 @@ const Button = styled.button`
 const StyledError = styled.div`
   color: crimson;
   font-size: 10px;
+  margin: 5px 0px -17px 10px;
 `;
 
 export function FileReport({ onSubmitReport, onClose }) {
@@ -148,6 +150,7 @@ export function FileReport({ onSubmitReport, onClose }) {
               onChange={handleChange}
             />
             {errors.registered && <StyledError>{errors.registered}</StyledError>}
+
             <Input
               name="nameInjured"
               placeholder="Name of injured person"
@@ -155,6 +158,7 @@ export function FileReport({ onSubmitReport, onClose }) {
               onChange={handleChange}
             />
             {errors.nameInjured && <StyledError>{errors.nameInjured}</StyledError>}
+
             <Input
               name="nameResponder"
               placeholder="Name of first responder"
@@ -162,6 +166,7 @@ export function FileReport({ onSubmitReport, onClose }) {
               onChange={handleChange}
             />
             {errors.nameResponder && <StyledError>{errors.nameResponder}</StyledError>}
+
             <Input
               name="nameWitness"
               placeholder="Name of present witness"
@@ -169,6 +174,7 @@ export function FileReport({ onSubmitReport, onClose }) {
               onChange={handleChange}
             />
             {errors.nameWitness && <StyledError>{errors.nameWitness}</StyledError>}
+
             <TextArea
               name="descr"
               placeholder="a brief description of what happened"
