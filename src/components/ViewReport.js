@@ -1,21 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Sublabel from './Sublable';
-
-const ModalDialog = styled.div`
-  width: 70%;
-  height: 85%;
-  z-index: 1;
-  color: #000;
-  background: white;
-  opacity: 1;
-  box-shadow: grey 0px 4px 4px;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-`;
+import { ModalDialogCanvas, Blur } from './ModalDialog';
 
 const Row = styled.div`
   position: relative;
@@ -32,32 +18,19 @@ const Descr = styled.p`
   margin-bottom: 10px;
 `;
 
-const Blur = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(193, 177, 170, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const CloseOnClickArea = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: white;
-  opacity: 0.1;
+  opacity: 0;
 `;
 
 export function ViewReport({ report, onClose }) {
   return (
     <Blur>
-      <ModalDialog>
+      <ModalDialogCanvas>
         <Row>
           {report._id}
           <Sublabel text="ID" />
@@ -79,7 +52,7 @@ export function ViewReport({ report, onClose }) {
           <Sublabel text="Witness" />
         </Row>
         <Descr>{report.descr}</Descr>
-      </ModalDialog>
+      </ModalDialogCanvas>
       <CloseOnClickArea onClick={onClose} />
     </Blur>
   );

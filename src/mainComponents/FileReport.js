@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import newID from '../utils/newID';
+import { ModalDialogCanvas, Blur } from '../components/ModalDialog';
 
 const FormBox = styled.form`
   width: 100%;
@@ -10,41 +11,62 @@ const FormBox = styled.form`
   flex-direction: column;
 `;
 
+const Input = styled.input`
+  width: 60%;
+  border: solid 1px #54b6d2;
+  border-radius: 10px;
+  box-shadow: 0px 2px #54b6d2;
+  font-size: 14px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 30px;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const TextArea = styled.textarea`
+  margin-top: 30px;
+  border: solid 2px #54b6d2;
+  border-radius: 10px;
+  box-shadow: 0px 2px #54b6d2;
+  width: 95%;
+  font-size: 14px;
+  align-self: center;
+  resize: none;
+  height: 130px;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  }
+`;
+
 const ButtonGroup = styled.div`
   display: flex;
   align-self: flex-end;
   margin-top: 20px;
 `;
 
+const Button = styled.button`
+  border-radius: 10px;
+  font-size: 14px;
+  border: solid 2px #54b6d2;
+  box-shadow: 0px 2px #54b6d2;
+  background: transparent;
+  margin: 5px;
+  transition: all 0.1s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transform: scale(0.95);
+  }
+`;
+
 const StyledError = styled.div`
   color: crimson;
   font-size: 10px;
-`;
-
-const ModalDialog = styled.div`
-  width: 70%;
-  height: 85%;
-  z-index: 1;
-  color: #000;
-  background: white;
-  opacity: 1;
-  box-shadow: grey 0px 4px 4px;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Blur = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(193, 177, 170, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 5px 0px -17px 10px;
 `;
 
 export function FileReport({ onSubmitReport, onClose }) {
@@ -118,9 +140,9 @@ export function FileReport({ onSubmitReport, onClose }) {
   return (
     <>
       <Blur>
-        <ModalDialog>
+        <ModalDialogCanvas>
           <FormBox onSubmit={handleSubmit}>
-            <input
+            <Input
               type="date"
               name="registered"
               placeholder="Enter a date"
@@ -128,28 +150,32 @@ export function FileReport({ onSubmitReport, onClose }) {
               onChange={handleChange}
             />
             {errors.registered && <StyledError>{errors.registered}</StyledError>}
-            <input
+
+            <Input
               name="nameInjured"
               placeholder="Name of injured person"
               value={formValues.nameInjured}
               onChange={handleChange}
             />
             {errors.nameInjured && <StyledError>{errors.nameInjured}</StyledError>}
-            <input
+
+            <Input
               name="nameResponder"
               placeholder="Name of first responder"
               value={formValues.nameResponder}
               onChange={handleChange}
             />
             {errors.nameResponder && <StyledError>{errors.nameResponder}</StyledError>}
-            <input
+
+            <Input
               name="nameWitness"
               placeholder="Name of present witness"
               value={formValues.nameWitness}
               onChange={handleChange}
             />
             {errors.nameWitness && <StyledError>{errors.nameWitness}</StyledError>}
-            <textarea
+
+            <TextArea
               name="descr"
               placeholder="a brief description of what happened"
               value={formValues.descr}
@@ -157,13 +183,13 @@ export function FileReport({ onSubmitReport, onClose }) {
             />
             {errors.descr && <StyledError>{errors.descr}</StyledError>}
             <ButtonGroup>
-              <button type="submit">submit</button>
-              <button type="cancel" onClick={onClose}>
+              <Button type="submit">submit</Button>
+              <Button type="cancel" onClick={onClose}>
                 cancel
-              </button>
+              </Button>
             </ButtonGroup>
           </FormBox>
-        </ModalDialog>
+        </ModalDialogCanvas>
       </Blur>
     </>
   );

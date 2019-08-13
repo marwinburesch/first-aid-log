@@ -19,7 +19,7 @@ export const StyledTitle = styled.h1`
   display: block;
   font-size: 2em;
   font-family: 'Raleway', sans-serif;
-  text-shadow: 2px 2px 0px #c1b1aa;
+  text-shadow: 3px 3px 0px #54b6d2;
 `;
 
 export function Header({ title }) {

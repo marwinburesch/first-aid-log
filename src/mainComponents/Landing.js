@@ -27,16 +27,16 @@ export const Landing = withRouter(function({ history, onAddClick }) {
   return (
     <>
       <Header title="First Aid Log" />
-      <Logo height="75px" width="75px" fill="#fff" />
+      <Logo height="80px" width="100px" fill="#f5a099" />
       <Description>
         Welcome to First Aid Log,
         <br />
-        <br /> this app let's you quickly call a dedicated frist responder. In the future you can
-        file and view first aid reports here too!
+        <br /> this app let's you quickly call a dedicated frist responder. You can also file and
+        view first aid reports! Amazing.
       </Description>
       <ButtonGroup>
         <a href="tel:01234567890">
-          <Button />
+          <Button type="phone" />
         </a>
         <div onClick={handleOnAddClick}>
           <Button type="plus" />
