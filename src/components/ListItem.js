@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const ReportBoxIndex = styled.div`
   width: 22px;
@@ -18,20 +18,7 @@ const ReportBoxIndex = styled.div`
   left: -11px;
 `;
 
-const slideInLeft = keyframes`
-  from {
-    transform: translateX(-400px);
-    visibility: hidden;
-  }
-
-  to {
-    transform: translateX(0);
-    visibility: visible;
-  }
-`;
-
-const ReportBox = styled.div`
-  width: 85%;
+export const ReportBox = styled.div`
   height: 48px;
   min-height: 48px;
   margin-bottom: 20px;
@@ -41,15 +28,13 @@ const ReportBox = styled.div`
   border-radius: 10px;
   font-size: 14px;
   text-align: center;
-  margin: 0px 3% 20px 3%;
+  margin: 0px 5% 20px 5%;
   border: solid #fff 1px;
-  background: transparent;
   box-sizing: border-box;
   box-shadow: 0px 4px 0px #fff;
   position: relative;
   cursor: pointer;
   transition: all 0.2s;
-  animation-name: ${slideInLeft} 2s;
   &:hover {
     background: linear-gradient(to bottom, transparent 0%, rgba(233, 228, 226, 0.5) 100%);
     transform: translateY(3px);

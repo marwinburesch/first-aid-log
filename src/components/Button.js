@@ -3,23 +3,23 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { ReactComponent as PhoneSVG } from '../assets/phone.svg';
 import { ReactComponent as PlusSVG } from '../assets/plus.svg';
+import { ReactComponent as SearchSVG } from '../assets/search.svg';
 
 const ActionButton = styled.button`
+  z-index: ${props => props.z || '0'};
   background-color: ${props => props.bgcolor || '#f5a099'};
   width: ${props => props.width || '80px'};
   height: ${props => props.width || '80px'};
   border-radius: 10px;
   border: solid 1px #fff;
-  box-shadow: 0px 4px 0px #fff;
+  box-shadow: 0px ${props => props.boxShadow || '4px'} 0px #fff;
   transition: all 0.2s;
   color: ${props => props.fill || '#fff'};
   cursor: pointer;
-  margin: 10px;
-  /* display: flex; */
-  /* flex-direction: row; */
+  margin: ${props => props.margin || '10px'};
   &:hover {
     background: linear-gradient(to bottom, transparent 0%, rgba(233, 228, 226, 0.5) 100%);
-    transform: scale(1.1);
+    transform: ${props => props.transform || 'scale(1.1)'};
     box-shadow: 0px 0px 0px #fff;
   }
   &:focus {
@@ -31,10 +31,11 @@ const ActionButton = styled.button`
   }
 `;
 
-export function Button({ fill, width, type, ...props }) {
+export function Button({ fill, width, type, margin, transform, boxShadow, onClick, ...props }) {
   const types = {
     plus: '#96D2E3',
-    phone: '#81c596'
+    phone: '#81c596',
+    search: 'transparent'
   };
 
   function getType(type) {
@@ -48,10 +49,20 @@ export function Button({ fill, width, type, ...props }) {
     if (type === 'phone') {
       return <PhoneSVG />;
     }
+    if (type === 'search') {
+      return <SearchSVG />;
+    }
   }
 
   return (
-    <ActionButton bgcolor={getType(type)} width={width}>
+    <ActionButton
+      bgcolor={getType(type)}
+      width={width}
+      margin={margin}
+      transform={transform}
+      onClick={onClick}
+      boxShadow={boxShadow}
+    >
       {getIconType(type)}
     </ActionButton>
   );

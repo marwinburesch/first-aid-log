@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideIn = keyframes`
+from {transform: translateY(700px)}
+to {transform: translateY(0px)}
+`;
+
+const fadeIn = keyframes`
+from {opacity: 0}
+to {opacity: 1}
+`;
 
 export const ModalDialogCanvas = styled.div`
   width: 70%;
@@ -13,6 +23,7 @@ export const ModalDialogCanvas = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+  animation: ${slideIn} 0.5s ease;
 `;
 
 export const Blur = styled.div`
@@ -25,4 +36,5 @@ export const Blur = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${fadeIn} 0.1s ease-in-out;
 `;
