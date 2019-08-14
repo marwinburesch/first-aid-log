@@ -38,9 +38,7 @@ export const Landing = withRouter(function({ history, onAddClick }) {
         <a href="tel:01234567890">
           <Button type="phone" />
         </a>
-        <div onClick={handleOnAddClick}>
-          <Button type="plus" />
-        </div>
+        <Button onClick={handleOnAddClick} type="plus" />
       </ButtonGroup>
     </>
   );

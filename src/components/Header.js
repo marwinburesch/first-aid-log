@@ -11,7 +11,7 @@ const HeaderBox = styled.div`
   align-items: center;
   color: white;
   background-color: transparent;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0px 10px 0px;
 `;
 
 export const StyledTitle = styled.h1`
