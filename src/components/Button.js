@@ -31,38 +31,31 @@ const ActionButton = styled.button`
   }
 `;
 
-export function Button({ fill, width, type, margin, transform, boxShadow, onClick, ...props }) {
-  const types = {
-    plus: '#96D2E3',
-    phone: '#81c596',
-    search: 'transparent'
-  };
+const types = {
+  plus: '#96D2E3',
+  phone: '#81c596',
+  search: 'transparent'
+};
 
-  function getType(type) {
-    return types[type] || types.phone;
+function getType(type) {
+  return types[type] || types.phone;
+}
+
+function getIconType(type) {
+  if (type === 'plus') {
+    return <PlusSVG />;
   }
-
-  function getIconType(type) {
-    if (type === 'plus') {
-      return <PlusSVG />;
-    }
-    if (type === 'phone') {
-      return <PhoneSVG />;
-    }
-    if (type === 'search') {
-      return <SearchSVG />;
-    }
+  if (type === 'phone') {
+    return <PhoneSVG />;
   }
+  if (type === 'search') {
+    return <SearchSVG />;
+  }
+}
 
+export function Button({ type, ...other }) {
   return (
-    <ActionButton
-      bgcolor={getType(type)}
-      width={width}
-      margin={margin}
-      transform={transform}
-      onClick={onClick}
-      boxShadow={boxShadow}
-    >
+    <ActionButton bgcolor={getType(type)} {...other}>
       {getIconType(type)}
     </ActionButton>
   );
@@ -71,6 +64,5 @@ export function Button({ fill, width, type, margin, transform, boxShadow, onClic
 Button.propTypes = {
   z: PropTypes.oneOf([0, 1]),
   bgcolor: PropTypes.oneOf(['plus', 'phone', 'search']),
-  width: PropTypes.string,
-  fill: PropTypes.string
+  width: PropTypes.string
 };

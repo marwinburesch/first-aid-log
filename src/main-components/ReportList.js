@@ -27,7 +27,7 @@ export const ReportList = withRouter(function({ reports, history, location }) {
 
   return (
     <>
-      <Header title="List of Reports" />
+      <Header title="Reports" />
       <Search onSearch={handleSearch} />
       <List reports={filteredReports} onSelect={handleSelect} />
 
