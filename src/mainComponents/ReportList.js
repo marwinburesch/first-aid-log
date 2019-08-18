@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { List } from '../components/List';
-import { ViewReport } from '../components/ViewReport';
 import { withRouter } from 'react-router-dom';
 import { Header } from '../components/Header';
+import { List } from '../components/List';
 import { Search } from '../components/Search';
+import { ViewReport } from '../components/ViewReport';
 
 export const ReportList = withRouter(function({ reports, history, location }) {
   const [searchValue, setSearchValue] = useState('');

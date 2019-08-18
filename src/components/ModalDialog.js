@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const slideIn = keyframes`
@@ -10,7 +11,7 @@ from {opacity: 0}
 to {opacity: 1}
 `;
 
-export const ModalDialogCanvas = styled.div`
+const ModalDialogCanvas = styled.div`
   width: 70%;
   max-width: 500px;
   height: 85%;
@@ -26,7 +27,7 @@ export const ModalDialogCanvas = styled.div`
   animation: ${slideIn} 0.5s ease;
 `;
 
-export const Blur = styled.div`
+const Blur = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -38,3 +39,19 @@ export const Blur = styled.div`
   justify-content: center;
   animation: ${fadeIn} 0.1s ease-in-out;
 `;
+
+export default function Dialog({ children, onClose, blurCloseActive }) {
+  const blurRef = React.useRef(null);
+
+  function handleBlurClick(event) {
+    if (event.target === blurRef.current && blurCloseActive === true) {
+      onClose();
+    }
+  }
+
+  return (
+    <Blur ref={blurRef} onClick={handleBlurClick}>
+      <ModalDialogCanvas>{children}</ModalDialogCanvas>
+    </Blur>
+  );
+}

@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 const HeaderBox = styled.div`
@@ -19,7 +19,6 @@ export const StyledTitle = styled.h1`
   display: block;
   font-size: 2em;
   font-family: 'Raleway', sans-serif;
-  text-shadow: 3px 3px 0px #54b6d2;
 `;
 
 export function Header({ title }) {

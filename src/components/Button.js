@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { ReactComponent as PhoneSVG } from '../assets/phone.svg';
 import { ReactComponent as PlusSVG } from '../assets/plus.svg';
 import { ReactComponent as SearchSVG } from '../assets/search.svg';
 
 const ActionButton = styled.button`
   z-index: ${props => props.z || '0'};
-  background-color: ${props => props.bgcolor || '#f5a099'};
+  background-color: ${props => props.bgcolor || 'transparent'};
   width: ${props => props.width || '80px'};
   height: ${props => props.width || '80px'};
   border-radius: 10px;
@@ -69,6 +69,8 @@ export function Button({ fill, width, type, margin, transform, boxShadow, onClic
 }
 
 Button.propTypes = {
+  z: PropTypes.oneOf([0, 1]),
+  bgcolor: PropTypes.oneOf(['plus', 'phone', 'search']),
   width: PropTypes.string,
   fill: PropTypes.string
 };

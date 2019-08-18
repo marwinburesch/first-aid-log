@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 const searchSlide = keyframes`
   from {
-    width: 0px;
+    width: 0;
     opacity: 0;
     }
   to {
@@ -18,8 +18,6 @@ const SearchBox = styled.div`
   width: 100%;
   margin-right: 5%;
   align-self: flex-end;
-  /* border: solid 1px #fff;
-  border-radius: 10px; */
   margin-bottom: 15px;
   position: relative;
   display: flex;
@@ -51,7 +49,7 @@ export function Search({ onSearch }) {
   const [show, setShow] = useState(null);
 
   function handleFilter(event) {
-    const value = event.target.value;
+    const { value } = event.target;
     onSearch(value);
   }
 

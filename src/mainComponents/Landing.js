@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Logo } from '../components/Logo';
-import { Button } from '../components/Button';
 import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
+import { Button } from '../components/Button';
 import { Header } from '../components/Header';
+import { Logo } from '../components/Logo';
 
 const Description = styled.p`
   text-align: justify;
