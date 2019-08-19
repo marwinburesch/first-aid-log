@@ -7,7 +7,6 @@ import { LandingContent } from './main-content/LandingContent';
 import { ListContent } from './main-content/ListContent';
 import SiteContainer from './SiteContainer';
 import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
-import { FirstAidKitList } from './main-content/FirstAidKitList';
 import kits from './utils/__mockKits.json';
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
         <MainContent>
           <LandingContent onAddClick={handleAddClick} />
           <ListContent data={reports} />
-          {/* <FirstAidKitList kits={kits} /> */}
           <ListContent data={kits} />
           {showAdd && (
             <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />

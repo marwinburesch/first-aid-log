@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Dialog from './ModalDialog';
-import Sublabel from './Sublable';
+import Sublabel from '../Sublable';
 
 const Row = styled.div`
   position: relative;
@@ -18,22 +17,22 @@ const Descr = styled.p`
   margin-bottom: 10px;
 `;
 
-export function ViewKit({ kit, onClose }) {
+export function KitLayout({ kit }) {
   return (
-    <Dialog onClose={onClose} blurCloseActive={true}>
+    <>
       <Row>
         {kit._id}
         <Sublabel text="ID" />
       </Row>
       <Row>
-        {kit.lastUsed}
+        {kit.date}
         <Sublabel text="Last Used" />
       </Row>
       <Row>
-        {kit.location}
+        {kit.name}
         <Sublabel text="Location" />
       </Row>
       <Descr>inventory .map goes here :)</Descr>
-    </Dialog>
+    </>
   );
 }

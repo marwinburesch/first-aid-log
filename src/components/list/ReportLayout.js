@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Dialog from './ModalDialog';
-import Sublabel from './Sublable';
+import Sublabel from '../Sublable';
 
 const Row = styled.div`
   position: relative;
@@ -18,9 +17,9 @@ const Descr = styled.p`
   margin-bottom: 10px;
 `;
 
-export function ViewReport({ report, onClose }) {
+export function ReportLayout({ report }) {
   return (
-    <Dialog onClose={onClose} blurCloseActive={true}>
+    <>
       <Row>
         {report._id}
         <Sublabel text="ID" />
@@ -42,6 +41,6 @@ export function ViewReport({ report, onClose }) {
         <Sublabel text="Witness" />
       </Row>
       <Descr>{report.descr}</Descr>
-    </Dialog>
+    </>
   );
 }

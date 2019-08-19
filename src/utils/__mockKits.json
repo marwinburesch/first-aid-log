@@ -4,6 +4,7 @@
     "index": 0,
     "date": "2015-07-24",
     "name": "Kitchen",
+    "type": "kit",
     "inventory": [
       {
         "_idItem": "AB1234",
@@ -28,6 +29,7 @@
     "index": 1,
     "date": "2018-06-15",
     "name": "Office V0.56",
+    "type": "kit",
     "inventory": [
       {
         "_idItem": "AB1234",

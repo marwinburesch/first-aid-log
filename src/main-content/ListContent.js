@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Header } from '../components/Header';
-import { List } from '../components/List';
+import { List } from '../components/list/List';
 import { Search } from '../components/Search';
-import { ViewReport } from '../components/ViewReport';
+import { ViewItem } from '../components/list/ViewItem';
 
 export const ListContent = withRouter(function({ data, history, location }) {
   const [searchValue, setSearchValue] = useState('');
@@ -24,7 +24,7 @@ export const ListContent = withRouter(function({ data, history, location }) {
     setSearchValue(value);
   }
 
-  console.log(data);
+  console.log(selectedItem);
 
   return (
     <>
@@ -32,7 +32,7 @@ export const ListContent = withRouter(function({ data, history, location }) {
       <Search onSearch={handleSearch} />
       <List data={filteredData} onSelect={handleSelect} />
 
-      {selectedItem && <ViewReport report={selectedItem} onClose={() => history.push('/')} />}
+      {selectedItem && <ViewItem item={selectedItem} onClose={() => history.push('/')} />}
     </>
   );
 });
