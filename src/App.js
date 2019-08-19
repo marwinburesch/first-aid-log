@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
-import { Landing } from './mainComponents/Landing';
-import { ReportList } from './mainComponents/ReportList';
-import { FileReport } from './mainComponents/FileReport';
-import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
 import { MainContent } from './components/MainContent';
-import SiteContainer from './SiteContainer';
+import GlobalStyles from './GlobalStyles';
+import { FileReport } from './main-content/FileReport';
+import { LandingContent } from './main-content/LandingContent';
+import { ListContent } from './main-content/ListContent';
+import SiteContainer from './components/SiteContainer';
+import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
+import kits from './utils/__mockKits.json';
 
 function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
@@ -30,8 +31,9 @@ function App() {
       <GlobalStyles />
       <SiteContainer>
         <MainContent>
-          <Landing onAddClick={handleAddClick} />
-          <ReportList reports={reports} />
+          <LandingContent onAddClick={handleAddClick} />
+          <ListContent title="Reports" data={reports} />
+          <ListContent title="First Aid Kits" data={kits} />
           {showAdd && (
             <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />
           )}

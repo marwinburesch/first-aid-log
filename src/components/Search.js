@@ -4,11 +4,11 @@ import { Button } from './Button';
 
 const searchSlide = keyframes`
   from {
-    width: 0px;
+    width: 0;
     opacity: 0;
     }
   to {
-    width: 40%;
+    width: 50%;
     opacity: 1;
     }
 `;
@@ -16,21 +16,23 @@ const searchSlide = keyframes`
 const SearchBox = styled.div`
   height: 40px;
   width: 100%;
-  margin-right: 5%;
   align-self: flex-end;
-  /* border: solid 1px #fff;
-  border-radius: 10px; */
   margin-bottom: 15px;
+  margin-top: ${props => props.marginTop};
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  transition: all 0.1s;
+  @media (max-width: 560px) {
+    margin: ${props => props.marginTop} -8px 15px -8px;
+  }
 `;
 
 const SearchInput = styled.input`
   position: absolute;
   z-index: 0;
-  width: 40%;
+  width: 50%;
   height: 20px;
   padding: 10px;
   border: solid 1px #fff;
@@ -51,8 +53,12 @@ export function Search({ onSearch }) {
   const [show, setShow] = useState(null);
 
   function handleFilter(event) {
-    const value = event.target.value;
+    const { value } = event.target;
     onSearch(value);
+  }
+
+  function toggleMargin(m) {
+    return m ? '0px' : '-50px';
   }
 
   function handleClick() {
@@ -60,7 +66,7 @@ export function Search({ onSearch }) {
   }
 
   return (
-    <SearchBox>
+    <SearchBox marginTop={toggleMargin(show)}>
       {show && <SearchInput placeholder="filter" onChange={handleFilter} />}
       <Button
         onClick={handleClick}

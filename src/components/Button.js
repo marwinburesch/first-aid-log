@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { ReactComponent as PhoneSVG } from '../assets/phone.svg';
 import { ReactComponent as PlusSVG } from '../assets/plus.svg';
 import { ReactComponent as SearchSVG } from '../assets/search.svg';
 
 const ActionButton = styled.button`
   z-index: ${props => props.z || '0'};
-  background-color: ${props => props.bgcolor || '#f5a099'};
+  background-color: ${props => props.bgcolor || 'transparent'};
   width: ${props => props.width || '80px'};
   height: ${props => props.width || '80px'};
   border-radius: 10px;
@@ -31,44 +31,38 @@ const ActionButton = styled.button`
   }
 `;
 
-export function Button({ fill, width, type, margin, transform, boxShadow, onClick, ...props }) {
-  const types = {
-    plus: '#96D2E3',
-    phone: '#81c596',
-    search: 'transparent'
-  };
+const types = {
+  plus: '#96D2E3',
+  phone: '#81c596',
+  search: 'transparent'
+};
 
-  function getType(type) {
-    return types[type] || types.phone;
+function getType(type) {
+  return types[type] || types.phone;
+}
+
+function getIconType(type) {
+  if (type === 'plus') {
+    return <PlusSVG />;
   }
-
-  function getIconType(type) {
-    if (type === 'plus') {
-      return <PlusSVG />;
-    }
-    if (type === 'phone') {
-      return <PhoneSVG />;
-    }
-    if (type === 'search') {
-      return <SearchSVG />;
-    }
+  if (type === 'phone') {
+    return <PhoneSVG />;
   }
+  if (type === 'search') {
+    return <SearchSVG />;
+  }
+}
 
+export function Button({ type, ...other }) {
   return (
-    <ActionButton
-      bgcolor={getType(type)}
-      width={width}
-      margin={margin}
-      transform={transform}
-      onClick={onClick}
-      boxShadow={boxShadow}
-    >
+    <ActionButton bgcolor={getType(type)} {...other}>
       {getIconType(type)}
     </ActionButton>
   );
 }
 
 Button.propTypes = {
-  width: PropTypes.string,
-  fill: PropTypes.string
+  z: PropTypes.oneOf([0, 1]),
+  bgcolor: PropTypes.oneOf(['plus', 'phone', 'search']),
+  width: PropTypes.string
 };

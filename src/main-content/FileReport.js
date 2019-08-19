@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Dialog from '../components/ModalDialog';
 import newID from '../utils/newID';
-import { ModalDialogCanvas, Blur } from '../components/ModalDialog';
 
 const FormBox = styled.form`
   width: 100%;
@@ -139,58 +139,56 @@ export function FileReport({ onSubmitReport, onClose }) {
 
   return (
     <>
-      <Blur>
-        <ModalDialogCanvas>
-          <FormBox onSubmit={handleSubmit}>
-            <Input
-              type="date"
-              name="registered"
-              placeholder="Enter a date"
-              value={formValues.registered}
-              onChange={handleChange}
-            />
-            {errors.registered && <StyledError>{errors.registered}</StyledError>}
+      <Dialog>
+        <FormBox onSubmit={handleSubmit}>
+          <Input
+            type="date"
+            name="registered"
+            placeholder="Enter a date"
+            value={formValues.registered}
+            onChange={handleChange}
+          />
+          {errors.registered && <StyledError>{errors.registered}</StyledError>}
 
-            <Input
-              name="nameInjured"
-              placeholder="Name of injured person"
-              value={formValues.nameInjured}
-              onChange={handleChange}
-            />
-            {errors.nameInjured && <StyledError>{errors.nameInjured}</StyledError>}
+          <Input
+            name="nameInjured"
+            placeholder="Name of injured person"
+            value={formValues.nameInjured}
+            onChange={handleChange}
+          />
+          {errors.nameInjured && <StyledError>{errors.nameInjured}</StyledError>}
 
-            <Input
-              name="nameResponder"
-              placeholder="Name of first responder"
-              value={formValues.nameResponder}
-              onChange={handleChange}
-            />
-            {errors.nameResponder && <StyledError>{errors.nameResponder}</StyledError>}
+          <Input
+            name="nameResponder"
+            placeholder="Name of first responder"
+            value={formValues.nameResponder}
+            onChange={handleChange}
+          />
+          {errors.nameResponder && <StyledError>{errors.nameResponder}</StyledError>}
 
-            <Input
-              name="nameWitness"
-              placeholder="Name of present witness"
-              value={formValues.nameWitness}
-              onChange={handleChange}
-            />
-            {errors.nameWitness && <StyledError>{errors.nameWitness}</StyledError>}
+          <Input
+            name="nameWitness"
+            placeholder="Name of present witness"
+            value={formValues.nameWitness}
+            onChange={handleChange}
+          />
+          {errors.nameWitness && <StyledError>{errors.nameWitness}</StyledError>}
 
-            <TextArea
-              name="descr"
-              placeholder="a brief description of what happened"
-              value={formValues.descr}
-              onChange={handleChange}
-            />
-            {errors.descr && <StyledError>{errors.descr}</StyledError>}
-            <ButtonGroup>
-              <Button type="submit">submit</Button>
-              <Button type="cancel" onClick={onClose}>
-                cancel
-              </Button>
-            </ButtonGroup>
-          </FormBox>
-        </ModalDialogCanvas>
-      </Blur>
+          <TextArea
+            name="descr"
+            placeholder="a brief description of what happened"
+            value={formValues.descr}
+            onChange={handleChange}
+          />
+          {errors.descr && <StyledError>{errors.descr}</StyledError>}
+          <ButtonGroup>
+            <Button type="submit">submit</Button>
+            <Button type="cancel" onClick={onClose}>
+              cancel
+            </Button>
+          </ButtonGroup>
+        </FormBox>
+      </Dialog>
     </>
   );
 }

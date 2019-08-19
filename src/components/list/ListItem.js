@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 const ReportBoxIndex = styled.div`
@@ -16,19 +16,25 @@ const ReportBoxIndex = styled.div`
   position: absolute;
   top: -10px;
   left: -11px;
+  @media (max-width: 560px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 export const ReportBox = styled.div`
   height: 48px;
   min-height: 48px;
   margin-bottom: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% repeat(auto-fit, minmax(85px, 1fr));
+  grid-template-rows: 100%;
   align-items: center;
   color: #fff;
   border-radius: 10px;
   font-size: 14px;
   text-align: center;
-  margin: 0px 5% 20px 5%;
+  margin: 0px 0px 20px 0px;
   border: solid #fff 1px;
   box-sizing: border-box;
   box-shadow: 0px 4px 0px #fff;
@@ -40,37 +46,33 @@ export const ReportBox = styled.div`
     transform: translateY(3px);
     box-shadow: 0px 0px 0px #fff;
   }
+  @media (max-width: 560px) {
+    margin: 0px -8px 20px -8px;
+  }
 `;
 
 const DateBox = styled.div`
   position: relative;
-  width: 30%;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  justify-self: flex-start;
 `;
 
 const TextBox = styled.div`
   position: relative;
-  width: 70%;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
 `;
 
-export function ListItem({ report, onSelect }) {
+export function ListItem({ item, onSelect }) {
   function handleOpen() {
-    onSelect(report);
+    onSelect(item);
   }
 
   return (
     <>
       <ReportBox onClick={handleOpen}>
-        <ReportBoxIndex>{report.index}</ReportBoxIndex>
-        <DateBox>{report.registered}</DateBox>
-        <TextBox>{report.nameInjured}</TextBox>
+        <ReportBoxIndex>{item.index}</ReportBoxIndex>
+        {item.type === 'kit' ? <div>{item._id}</div> : ''}
+        <DateBox>{item.date}</DateBox>
+        <TextBox>{item.name}</TextBox>
       </ReportBox>
     </>
   );

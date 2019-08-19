@@ -6,7 +6,8 @@ const SiteContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow-y: auto; */
+  background: linear-gradient(135deg, #7ec493 0%, #96d2e3 100%);
   @media (min-width: 860px) {
   }
 `;

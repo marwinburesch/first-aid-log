@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "XYZ1234",
+    "index": 0,
+    "date": "2015-07-24",
+    "name": "Kitchen",
+    "type": "kit",
+    "inventory": [
+      {
+        "_idItem": "AB1234",
+        "name": "Bandage",
+        "type": "regular",
+        "itemLastUsed": "2018-11-09",
+        "itemBBF": "2022-12-31",
+        "size": "10cm x 10cm"
+      },
+      {
+        "_idItem": "CD5678",
+        "name": "Patches",
+        "type": "regular",
+        "itemLastUsed": "2019-4-05",
+        "itemBBF": "2021-12-30",
+        "size": "4cm x 9cm"
+      }
+    ]
+  },
+  {
+    "_id": "XYZ5678",
+    "index": 1,
+    "date": "2018-06-15",
+    "name": "Office V0.56",
+    "type": "kit",
+    "inventory": [
+      {
+        "_idItem": "AB1234",
+        "name": "Bandage",
+        "type": "regular",
+        "itemLastUsed": "2016-07-13",
+        "itemBBF": "2022-12-31",
+        "size": "10cm x 10cm"
+      },
+      {
+        "_idItem": "CD5678",
+        "name": "Patches",
+        "type": "regular",
+        "itemLastUsed": "2019-4-05",
+        "itemBBF": "2021-12-30",
+        "size": "4cm x 9cm"
+      }
+    ]
+  }
+]
