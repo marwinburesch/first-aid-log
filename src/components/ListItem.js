@@ -22,7 +22,8 @@ export const ReportBox = styled.div`
   height: 48px;
   min-height: 48px;
   margin-bottom: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% repeat(auto-fit, minmax(150px, 70%));
   align-items: center;
   color: #fff;
   border-radius: 10px;
@@ -44,33 +45,25 @@ export const ReportBox = styled.div`
 
 const DateBox = styled.div`
   position: relative;
-  width: 30%;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  justify-self: flex-start;
 `;
 
 const TextBox = styled.div`
   position: relative;
-  width: 70%;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
 `;
 
-export function ListItem({ report, onSelect }) {
+export function ListItem({ item, onSelect }) {
   function handleOpen() {
-    onSelect(report);
+    onSelect(item);
   }
 
   return (
     <>
       <ReportBox onClick={handleOpen}>
-        <ReportBoxIndex>{report.index}</ReportBoxIndex>
-        <DateBox>{report.registered}</DateBox>
-        <TextBox>{report.nameInjured}</TextBox>
+        <ReportBoxIndex>{item.index}</ReportBoxIndex>
+        <DateBox>{item.date}</DateBox>
+        <TextBox>{item.name}</TextBox>
       </ReportBox>
     </>
   );

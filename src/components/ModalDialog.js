@@ -15,7 +15,6 @@ const ModalDialogCanvas = styled.div`
   width: 70%;
   max-width: 500px;
   height: 85%;
-  z-index: 1;
   color: #000;
   background: white;
   box-shadow: #54b6d2 3px 3px 0px;
@@ -29,6 +28,7 @@ const ModalDialogCanvas = styled.div`
 
 const Blur = styled.div`
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100%;

@@ -19,7 +19,7 @@ const ButtonGroup = styled.div`
   margin: 40px;
 `;
 
-export const Landing = withRouter(function({ history, onAddClick }) {
+export const LandingContent = withRouter(function({ history, onAddClick }) {
   function handleOnAddClick() {
     onAddClick(true);
   }

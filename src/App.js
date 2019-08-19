@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { MainContent } from './components/MainContent';
 import GlobalStyles from './GlobalStyles';
-import { FileReport } from './main-components/FileReport';
-import { Landing } from './main-components/Landing';
-import { ReportList } from './main-components/ReportList';
+import { FileReport } from './main-content/FileReport';
+import { LandingContent } from './main-content/LandingContent';
+import { ListContent } from './main-content/ListContent';
 import SiteContainer from './SiteContainer';
 import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
-import { FirstAidKitList } from './main-components/FirstAidKitList';
+import { FirstAidKitList } from './main-content/FirstAidKitList';
 import kits from './utils/__mockKits.json';
 
 function App() {
@@ -32,12 +32,13 @@ function App() {
       <GlobalStyles />
       <SiteContainer>
         <MainContent>
-          <Landing onAddClick={handleAddClick} />
-          <ReportList reports={reports} />
+          <LandingContent onAddClick={handleAddClick} />
+          <ListContent data={reports} />
+          {/* <FirstAidKitList kits={kits} /> */}
+          <ListContent data={kits} />
           {showAdd && (
             <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />
           )}
-          <FirstAidKitList kits={kits} />
         </MainContent>
       </SiteContainer>
     </Router>

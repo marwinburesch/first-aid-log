@@ -15,12 +15,12 @@ const ListWrapper = styled.div`
   }
 `;
 
-export function List({ onSelect, reports }) {
+export function List({ onSelect, data }) {
   return (
     <ListWrapper>
-      {reports &&
-        reports.map(report => {
-          return <ListItem key={report._id} report={report} onSelect={onSelect} />;
+      {data &&
+        data.map(item => {
+          return <ListItem key={item._id} item={item} onSelect={onSelect} />;
         })}
     </ListWrapper>
   );

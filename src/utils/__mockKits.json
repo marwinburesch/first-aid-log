@@ -2,8 +2,8 @@
   {
     "_id": "XYZ1234",
     "index": 0,
-    "lastUsed": "2015-07-24",
-    "location": "Kitchen",
+    "date": "2015-07-24",
+    "name": "Kitchen",
     "inventory": [
       {
         "_idItem": "AB1234",
@@ -26,8 +26,8 @@
   {
     "_id": "XYZ5678",
     "index": 1,
-    "lastUsed": "2018-06-15",
-    "location": "Office V0.56",
+    "date": "2018-06-15",
+    "name": "Office V0.56",
     "inventory": [
       {
         "_idItem": "AB1234",

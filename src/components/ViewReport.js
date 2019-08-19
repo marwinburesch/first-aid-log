@@ -26,11 +26,11 @@ export function ViewReport({ report, onClose }) {
         <Sublabel text="ID" />
       </Row>
       <Row>
-        {report.registered}
+        {report.date}
         <Sublabel text="Date" />
       </Row>
       <Row>
-        {report.nameInjured}
+        {report.name}
         <Sublabel text="Name Injured" />
       </Row>
       <Row>
