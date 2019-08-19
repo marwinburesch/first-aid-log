@@ -5,7 +5,7 @@ import GlobalStyles from './GlobalStyles';
 import { FileReport } from './main-content/FileReport';
 import { LandingContent } from './main-content/LandingContent';
 import { ListContent } from './main-content/ListContent';
-import SiteContainer from './SiteContainer';
+import SiteContainer from './components/SiteContainer';
 import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
 import kits from './utils/__mockKits.json';
 
@@ -32,8 +32,8 @@ function App() {
       <SiteContainer>
         <MainContent>
           <LandingContent onAddClick={handleAddClick} />
-          <ListContent data={reports} />
-          <ListContent data={kits} />
+          <ListContent title="Reports" data={reports} />
+          <ListContent title="First Aid Kits" data={kits} />
           {showAdd && (
             <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />
           )}

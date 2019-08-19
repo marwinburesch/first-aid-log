@@ -5,7 +5,7 @@ import { List } from '../components/list/List';
 import { Search } from '../components/Search';
 import { ViewItem } from '../components/list/ViewItem';
 
-export const ListContent = withRouter(function({ data, history, location }) {
+export const ListContent = withRouter(function({ data, history, location, title }) {
   const [searchValue, setSearchValue] = useState('');
 
   const filteredData = data.filter(
@@ -28,7 +28,7 @@ export const ListContent = withRouter(function({ data, history, location }) {
 
   return (
     <>
-      <Header title="Reports" />
+      <Header title={title} />
       <Search onSearch={handleSearch} />
       <List data={filteredData} onSelect={handleSelect} />
 
