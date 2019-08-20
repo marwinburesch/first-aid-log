@@ -37,6 +37,7 @@ const Blur = styled.div`
   height: 100%;
   background: rgba(255, 255, 255, 0.6);
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   animation: ${fadeIn} 0.1s ease-in-out;

@@ -6,16 +6,26 @@ import { FileReport } from './main-content/FileReport';
 import { LandingContent } from './main-content/LandingContent';
 import { ListContent } from './main-content/ListContent';
 import SiteContainer from './components/SiteContainer';
-import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
-import kits from './utils/__mockKits.json';
+import {
+  getReportsFromStorage,
+  setReportsToStorage,
+  getKitsFromStorage,
+  setKitsToStorage
+} from './utils/storage.js';
+// import kits from './utils/__mockKits.json';
 
 function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
+  const [kits, setKits] = useState(getKitsFromStorage());
   const [showAdd, setShowAdd] = useState(null);
 
   useEffect(() => {
     setReportsToStorage(reports);
   }, [reports]);
+
+  useEffect(() => {
+    setKitsToStorage(kits);
+  }, [kits]);
 
   function handleAddClick(show) {
     setShowAdd(show);

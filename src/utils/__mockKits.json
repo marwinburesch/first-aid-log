@@ -5,6 +5,7 @@
     "date": "2015-07-24",
     "name": "Kitchen",
     "type": "kit",
+    "notes": "Deserunt aute incididunt sunt est eu ex mollit ipsum. Ea amet aliquip amet consequat. Eiusmod consectetur fugiat aliquip consequat irure est cupidatat aliquip est anim tempor culpa minim. Cupidatat dolore id est occaecat.",
     "inventory": [
       {
         "_idItem": "AB1234",
@@ -12,15 +13,35 @@
         "type": "regular",
         "itemLastUsed": "2018-11-09",
         "itemBBF": "2022-12-31",
-        "size": "10cm x 10cm"
+        "size": "6cm",
+        "amount": "4"
       },
       {
         "_idItem": "CD5678",
-        "name": "Patches",
+        "name": "Plaster",
         "type": "regular",
         "itemLastUsed": "2019-4-05",
         "itemBBF": "2021-12-30",
-        "size": "4cm x 9cm"
+        "size": "2.5cm x 7cm",
+        "amount": "6"
+      },
+      {
+        "_idItem": "EF9012",
+        "name": "Antiseptic",
+        "type": "regular",
+        "itemLastUsed": "2018-11-09",
+        "itemBBF": "2025-06-05",
+        "size": "200ml",
+        "amount": "1"
+      },
+      {
+        "_idItem": "GH3456",
+        "name": "Gauze pad",
+        "type": "regular",
+        "itemLastUsed": "2018-11-09",
+        "itemBBF": "2025-12-30",
+        "size": "10cm x 10cm",
+        "amount": "4"
       }
     ]
   },
@@ -30,6 +51,7 @@
     "date": "2018-06-15",
     "name": "Office V0.56",
     "type": "kit",
+    "notes": "Deserunt aute incididunt sunt est eu ex mollit ipsum. Ea amet aliquip amet consequat. Eiusmod consectetur fugiat aliquip consequat irure est cupidatat aliquip est anim tempor culpa minim. Cupidatat dolore id est occaecat.",
     "inventory": [
       {
         "_idItem": "AB1234",
@@ -37,7 +59,8 @@
         "type": "regular",
         "itemLastUsed": "2016-07-13",
         "itemBBF": "2022-12-31",
-        "size": "10cm x 10cm"
+        "size": "10cm x 10cm",
+        "amount": "3"
       },
       {
         "_idItem": "CD5678",
@@ -45,7 +68,26 @@
         "type": "regular",
         "itemLastUsed": "2019-4-05",
         "itemBBF": "2021-12-30",
-        "size": "4cm x 9cm"
+        "size": "4cm x 9cm",
+        "amount": "8"
+      },
+      {
+        "_idItem": "EF9012",
+        "name": "Antiseptic",
+        "type": "regular",
+        "itemLastUsed": "2016-07-13",
+        "itemBBF": "2025-06-05",
+        "size": "200ml",
+        "amount": "1"
+      },
+      {
+        "_idItem": "GH3456",
+        "name": "Gauze pad",
+        "type": "regular",
+        "itemLastUsed": "2016-08-09",
+        "itemBBF": "2025-12-30",
+        "size": "10cm x 10cm",
+        "amount": "4"
       }
     ]
   }

@@ -24,8 +24,6 @@ export const ListContent = withRouter(function({ data, history, location, title 
     setSearchValue(value);
   }
 
-  console.log(selectedItem);
-
   return (
     <>
       <Header title={title} />
