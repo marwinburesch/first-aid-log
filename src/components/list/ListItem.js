@@ -25,7 +25,8 @@ const ReportBoxIndex = styled.div`
 export const ReportBox = styled.div`
   height: 48px;
   min-height: 48px;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 610px;
   display: grid;
   grid-template-columns: 30% repeat(auto-fit, minmax(85px, 1fr));
   grid-template-rows: 100%;

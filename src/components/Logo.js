@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const LogoContainer = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
+  grid-column: 2 / 2;
+  justify-self: center;
   background-color: #fff;
   border-radius: 10px;
   display: flex;

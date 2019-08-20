@@ -16,6 +16,7 @@ const searchSlide = keyframes`
 const SearchBox = styled.div`
   height: 40px;
   width: 100%;
+  grid-column: 2 / 3;
   align-self: flex-end;
   margin-bottom: 15px;
   margin-top: ${props => props.marginTop};
@@ -24,9 +25,6 @@ const SearchBox = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   transition: all 0.1s;
-  @media (max-width: 560px) {
-    margin: ${props => props.marginTop} -8px 15px -8px;
-  }
 `;
 
 const SearchInput = styled.input`

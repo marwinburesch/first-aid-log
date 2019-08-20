@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Button } from './Button';
 
 const slideIn = keyframes`
 from {transform: translateY(700px)}
@@ -24,6 +25,7 @@ const ModalDialogCanvas = styled.div`
   display: flex;
   flex-direction: column;
   animation: ${slideIn} 0.5s ease;
+  position: relative;
 `;
 
 const Blur = styled.div`
@@ -51,7 +53,22 @@ export default function Dialog({ children, onClose, blurCloseActive }) {
 
   return (
     <Blur ref={blurRef} onClick={handleBlurClick}>
-      <ModalDialogCanvas>{children}</ModalDialogCanvas>
+      <ModalDialogCanvas>
+        <Button
+          onClick={onClose}
+          ani="none"
+          fill="#000"
+          type="close"
+          width="30px"
+          margin="0px"
+          transform="scale(1)"
+          boxShadow="0px"
+          pos="absolute"
+          right="0px"
+          top="0px"
+        />
+        {children}
+      </ModalDialogCanvas>
     </Blur>
   );
 }

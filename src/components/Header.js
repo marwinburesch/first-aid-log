@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const HeaderBox = styled.div`
   width: 100%;
   height: 48px;
+  grid-column: 1 / 4;
   display: flex;
   flex-direction: row;
   justify-content: center;
