@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { List } from '../components/list/List';
-import { Search } from '../components/Search';
+import { Search } from '../components/list/Search';
 import { ViewItem } from '../components/list/ViewItem';
 
 export const ListContent = withRouter(function({ data, history, location, title }) {
   const [searchValue, setSearchValue] = useState('');
-
   const filteredData = data.filter(
     item =>
       item.name.toLowerCase().includes(searchValue.toLowerCase()) || item.date.includes(searchValue)

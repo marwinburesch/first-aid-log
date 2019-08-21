@@ -23,9 +23,13 @@ export function List({ onSelect, data }) {
   return (
     <ListWrapper>
       {data &&
-        data.map(item => {
-          return <ListItem key={item._id} item={item} onSelect={onSelect} />;
-        })}
+        data
+          .sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+          })
+          .map((item, index) => {
+            return <ListItem key={item._id} item={item} index={index + 1} onSelect={onSelect} />;
+          })}
     </ListWrapper>
   );
 }

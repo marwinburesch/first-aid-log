@@ -21,7 +21,7 @@ const ModalDialogCanvas = styled.div`
   box-shadow: #54b6d2 3px 3px 0px;
   border: solid #54b6d2 3px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   animation: ${slideIn} 0.5s ease;
@@ -37,7 +37,6 @@ const Blur = styled.div`
   height: 100%;
   background: rgba(255, 255, 255, 0.6);
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   animation: ${fadeIn} 0.1s ease-in-out;

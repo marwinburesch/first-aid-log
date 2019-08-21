@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 const searchSlide = keyframes`
   from {
@@ -70,7 +70,7 @@ export function Search({ onSearch }) {
         onClick={handleClick}
         ani="none"
         type="search"
-        width="42px"
+        width="40px"
         margin="0px"
         transform="scale(1)"
         boxShadow="0px"

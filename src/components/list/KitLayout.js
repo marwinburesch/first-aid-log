@@ -9,7 +9,7 @@ const Row = styled.div`
   margin-bottom: 10px;
 `;
 
-const Inventory = styled.div`
+export const Inventory = styled.div`
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -18,7 +18,7 @@ const Inventory = styled.div`
   grid-gap: 10px;
 `;
 
-const InvItem = styled.div`
+export const InvItem = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -53,13 +53,14 @@ export function KitLayout({ kit }) {
       <Inventory>
         {kit.inventory.map(item => {
           return (
-            <InvItem key={item._id}>
+            <InvItem key={item._idItem}>
               <div>{item.name}</div> <div>{item.itemLastUsed}</div> <div>{item.size}</div>
               <div>{item.amount}</div>
             </InvItem>
           );
         })}
       </Inventory>
+      <Descr>{kit.notes}</Descr>
     </>
   );
 }

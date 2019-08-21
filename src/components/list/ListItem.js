@@ -47,9 +47,6 @@ export const ReportBox = styled.div`
     transform: translateY(3px);
     box-shadow: 0px 0px 0px #fff;
   }
-  @media (max-width: 560px) {
-    margin: 0px -8px 20px -8px;
-  }
 `;
 
 const DateBox = styled.div`
@@ -62,7 +59,7 @@ const TextBox = styled.div`
   text-align: center;
 `;
 
-export function ListItem({ item, onSelect }) {
+export function ListItem({ item, onSelect, index }) {
   function handleOpen() {
     onSelect(item);
   }
@@ -70,7 +67,7 @@ export function ListItem({ item, onSelect }) {
   return (
     <>
       <ReportBox onClick={handleOpen}>
-        <ReportBoxIndex>{item.index}</ReportBoxIndex>
+        <ReportBoxIndex>{index}</ReportBoxIndex>
         {item.type === 'kit' ? <div>{item._id}</div> : ''}
         <DateBox>{item.date}</DateBox>
         <TextBox>{item.name}</TextBox>

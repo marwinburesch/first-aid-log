@@ -12,12 +12,11 @@ import {
   getKitsFromStorage,
   setKitsToStorage
 } from './utils/storage.js';
-// import kits from './utils/__mockKits.json';
 
 function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
   const [kits, setKits] = useState(getKitsFromStorage());
-  const [showAdd, setShowAdd] = useState(null);
+  const [showAdd, setShowAdd] = useState(false);
 
   useEffect(() => {
     setReportsToStorage(reports);
@@ -33,7 +32,7 @@ function App() {
 
   function handleOnSubmit(report) {
     setReports([report, ...reports]);
-    setShowAdd(null);
+    setShowAdd(false);
   }
 
   return (
@@ -45,7 +44,11 @@ function App() {
           <ListContent title="Reports" data={reports} />
           <ListContent title="First Aid Kits" data={kits} />
           {showAdd && (
-            <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />
+            <FileReport
+              kits={kits}
+              onSubmitReport={handleOnSubmit}
+              onClose={() => setShowAdd(false)}
+            />
           )}
         </MainContent>
       </SiteContainer>
