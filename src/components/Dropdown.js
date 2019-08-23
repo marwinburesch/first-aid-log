@@ -20,9 +20,9 @@ export function Dropdown({ kits, onAmountChange, amounts }) {
     setSelection(event.target.value);
   }
 
-  function handleChange(event) {
+  function handleChange(event, selectedKit) {
     const { id, value } = event.target;
-    onAmountChange(id, value);
+    onAmountChange(id, value, selectedKit);
   }
 
   return (
@@ -44,10 +44,12 @@ export function Dropdown({ kits, onAmountChange, amounts }) {
               <InvItem key={item._idItem + 'inv'}>
                 <div>{item.name}</div> <div>{item.size}</div>
                 <Amount
-                  value={amounts._idItem}
                   id={item._idItem}
                   type="number"
-                  onChange={handleChange}
+                  min="0"
+                  max={item.amount}
+                  value={amounts._idItem}
+                  onChange={event => handleChange(event, selectedKit)}
                 />
               </InvItem>
             );

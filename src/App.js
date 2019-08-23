@@ -30,8 +30,18 @@ function App() {
     setShowAdd(show);
   }
 
-  function handleOnSubmit(report) {
+  function handleOnSubmit(report, amounts, selectedKit) {
     setReports([report, ...reports]);
+
+    const newKits = [...kits];
+    const kit = newKits.find(kit => kit._id === selectedKit._id);
+    Object.entries(amounts).forEach(([key, amount]) => {
+      const inventoryItem = kit.inventory.find(item => item._idItem === key);
+      inventoryItem.amount -= parseInt(amount);
+    });
+
+    setKits(newKits);
+
     setShowAdd(false);
   }
 

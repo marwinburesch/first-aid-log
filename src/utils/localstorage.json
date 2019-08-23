@@ -1,7 +1,6 @@
 [
   {
     "_id": "190613-284",
-    "index": 0,
     "type": "report",
     "date": "2019-06-13",
     "name": "Katlyn Ann Nemcovsky-Lampe",
@@ -11,7 +10,6 @@
   },
   {
     "_id": "190403-207",
-    "index": 1,
     "type": "report",
     "date": "2019-04-03",
     "name": "Lando Calrissian",
@@ -21,7 +19,6 @@
   },
   {
     "_id": "181224-751",
-    "index": 2,
     "type": "report",
     "date": "2018-12-24",
     "name": "Constantin Konstantinopel",
@@ -31,7 +28,6 @@
   },
   {
     "_id": "180821-981",
-    "index": 3,
     "type": "report",
     "date": "2018-08-21",
     "name": "David Copperfield",
@@ -41,7 +37,6 @@
   },
   {
     "_id": "180712-885",
-    "index": 4,
     "type": "report",
     "date": "2018-07-12",
     "name": "Kevin Kuhfeldt",

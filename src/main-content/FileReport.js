@@ -85,9 +85,12 @@ export function FileReport({ onSubmitReport, onClose, kits }) {
   });
 
   const [amounts, setAmounts] = useState({});
+  const [selectedKit, setSelectedKit] = useState(null);
+  console.log(amounts);
 
-  function handleAmountChange(id, value) {
-    setAmounts({ ...amounts, [id]: value });
+  function handleAmountChange(id, value, selectedKit) {
+    setAmounts({ ...amounts, [id]: parseInt(value) });
+    setSelectedKit(selectedKit);
   }
 
   const [errors, setErrors] = useState({});
@@ -99,8 +102,6 @@ export function FileReport({ onSubmitReport, onClose, kits }) {
       [name]: value
     });
   }
-
-  console.log(amounts);
 
   function validate() {
     const errors = {};
@@ -147,9 +148,9 @@ export function FileReport({ onSubmitReport, onClose, kits }) {
       descr: formValues.descr,
       type: 'report'
     };
-    //TODO: add amounts
     console.log('submitting:', report);
-    onSubmitReport(report);
+
+    onSubmitReport(report, amounts, selectedKit);
   }
 
   return (
