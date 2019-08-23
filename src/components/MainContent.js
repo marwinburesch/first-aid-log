@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 export const MainContent = styled.div`
   background: transparent;
-  /* max-width: 680px; */
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(10%, auto) minmax(auto, 610px) minmax(10%, auto);
   align-items: center;
-  padding: 0px 10% 0px 10%;
   overflow: auto;
   color: #fff;
   position: relative;
+  @media (max-width: 560px) {
+    grid-template-columns: minmax(6%, auto) minmax(auto, 610px) minmax(6%, auto);
+  }
 `;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Dialog from '../components/ModalDialog';
 import newID from '../utils/newID';
+import { Dropdown } from '../components/Dropdown';
 
 const FormBox = styled.form`
   width: 100%;
@@ -9,32 +10,35 @@ const FormBox = styled.form`
   background: transparent;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
 `;
 
 const Input = styled.input`
-  width: 60%;
+  width: 90%;
   border: solid 1px #54b6d2;
   border-radius: 10px;
   box-shadow: 0px 2px #54b6d2;
   font-size: 14px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   margin-top: 30px;
+  align-self: center;
   &:focus {
     outline: none;
   }
 `;
 
 const TextArea = styled.textarea`
+  width: 90%;
+  height: 130px;
   margin-top: 30px;
-  border: solid 2px #54b6d2;
+  border: solid 1px #54b6d2;
   border-radius: 10px;
   box-shadow: 0px 2px #54b6d2;
-  width: 95%;
   font-size: 14px;
-  align-self: center;
   resize: none;
-  height: 130px;
   padding: 10px;
+  align-self: center;
   &:focus {
     outline: none;
   }
@@ -69,15 +73,25 @@ const StyledError = styled.div`
   margin: 5px 0px -17px 10px;
 `;
 
-export function FileReport({ onSubmitReport, onClose }) {
+export function FileReport({ onSubmitReport, onClose, kits }) {
   const [formValues, SetFormValues] = useState({
     _id: '',
-    registered: '',
-    nameInjured: '',
+    date: '',
+    name: '',
     nameWitness: '',
     nameResponder: '',
-    descr: ''
+    descr: '',
+    type: ''
   });
+
+  const [amounts, setAmounts] = useState({});
+  const [selectedKit, setSelectedKit] = useState(null);
+  console.log(amounts);
+
+  function handleAmountChange(id, value, selectedKit) {
+    setAmounts({ ...amounts, [id]: parseInt(value) });
+    setSelectedKit(selectedKit);
+  }
 
   const [errors, setErrors] = useState({});
 
@@ -92,12 +106,12 @@ export function FileReport({ onSubmitReport, onClose }) {
   function validate() {
     const errors = {};
 
-    if (formValues.registered.trim() === '') {
-      errors.registered = 'Please enter a valid date';
+    if (formValues.date.trim() === '') {
+      errors.date = 'Please enter a valid date';
     }
 
-    if (formValues.nameInjured.trim() === '') {
-      errors.nameInjured = 'Please enter the name of the injured person';
+    if (formValues.name.trim() === '') {
+      errors.name = 'Please enter the name of the injured person';
     }
 
     if (formValues.nameWitness.trim() === '') {
@@ -126,37 +140,39 @@ export function FileReport({ onSubmitReport, onClose }) {
     }
 
     const report = {
-      _id: newID(formValues.registered),
-      registered: formValues.registered,
-      nameInjured: formValues.nameInjured,
+      _id: newID(formValues.date),
+      date: formValues.date,
+      name: formValues.name,
       nameWitness: formValues.nameWitness,
       nameResponder: formValues.nameResponder,
-      descr: formValues.descr
+      descr: formValues.descr,
+      type: 'report'
     };
+    console.log('submitting:', report);
 
-    onSubmitReport(report);
+    onSubmitReport(report, amounts, selectedKit);
   }
 
   return (
     <>
-      <Dialog>
+      <Dialog onClose={onClose}>
         <FormBox onSubmit={handleSubmit}>
           <Input
             type="date"
-            name="registered"
+            name="date"
             placeholder="Enter a date"
-            value={formValues.registered}
+            value={formValues.date}
             onChange={handleChange}
           />
-          {errors.registered && <StyledError>{errors.registered}</StyledError>}
+          {errors.date && <StyledError>{errors.date}</StyledError>}
 
           <Input
-            name="nameInjured"
+            name="name"
             placeholder="Name of injured person"
-            value={formValues.nameInjured}
+            value={formValues.name}
             onChange={handleChange}
           />
-          {errors.nameInjured && <StyledError>{errors.nameInjured}</StyledError>}
+          {errors.name && <StyledError>{errors.name}</StyledError>}
 
           <Input
             name="nameResponder"
@@ -181,6 +197,9 @@ export function FileReport({ onSubmitReport, onClose }) {
             onChange={handleChange}
           />
           {errors.descr && <StyledError>{errors.descr}</StyledError>}
+
+          <Dropdown kits={kits} amounts={amounts} onAmountChange={handleAmountChange} />
+
           <ButtonGroup>
             <Button type="submit">submit</Button>
             <Button type="cancel" onClick={onClose}>

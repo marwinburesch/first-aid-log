@@ -11,3 +11,17 @@ export function getReportsFromStorage() {
 export function setReportsToStorage(string) {
   localStorage.setItem('reports', JSON.stringify(string));
 }
+
+export function getKitsFromStorage() {
+  try {
+    const kits = localStorage.getItem('kits');
+    const parsedKits = JSON.parse(kits);
+    return parsedKits || [];
+  } catch {
+    return [];
+  }
+}
+
+export function setKitsToStorage(string) {
+  localStorage.setItem('kits', JSON.stringify(string));
+}

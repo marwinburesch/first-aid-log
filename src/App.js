@@ -6,24 +6,43 @@ import { FileReport } from './main-content/FileReport';
 import { LandingContent } from './main-content/LandingContent';
 import { ListContent } from './main-content/ListContent';
 import SiteContainer from './components/SiteContainer';
-import { getReportsFromStorage, setReportsToStorage } from './utils/storage.js';
-import kits from './utils/__mockKits.json';
+import {
+  getReportsFromStorage,
+  setReportsToStorage,
+  getKitsFromStorage,
+  setKitsToStorage
+} from './utils/storage.js';
 
 function App() {
   const [reports, setReports] = useState(getReportsFromStorage());
-  const [showAdd, setShowAdd] = useState(null);
+  const [kits, setKits] = useState(getKitsFromStorage());
+  const [showAdd, setShowAdd] = useState(false);
 
   useEffect(() => {
     setReportsToStorage(reports);
   }, [reports]);
 
+  useEffect(() => {
+    setKitsToStorage(kits);
+  }, [kits]);
+
   function handleAddClick(show) {
     setShowAdd(show);
   }
 
-  function handleOnSubmit(report) {
+  function handleOnSubmit(report, amounts, selectedKit) {
     setReports([report, ...reports]);
-    setShowAdd(null);
+
+    const newKits = [...kits];
+    const kit = newKits.find(kit => kit._id === selectedKit._id);
+    Object.entries(amounts).forEach(([key, amount]) => {
+      const inventoryItem = kit.inventory.find(item => item._idItem === key);
+      inventoryItem.amount -= parseInt(amount);
+    });
+
+    setKits(newKits);
+
+    setShowAdd(false);
   }
 
   return (
@@ -35,7 +54,11 @@ function App() {
           <ListContent title="Reports" data={reports} />
           <ListContent title="First Aid Kits" data={kits} />
           {showAdd && (
-            <FileReport onSubmitReport={handleOnSubmit} onClose={() => setShowAdd(null)} />
+            <FileReport
+              kits={kits}
+              onSubmitReport={handleOnSubmit}
+              onClose={() => setShowAdd(false)}
+            />
           )}
         </MainContent>
       </SiteContainer>

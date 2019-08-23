@@ -6,17 +6,20 @@ import { Header } from '../components/Header';
 import { Logo } from '../components/Logo';
 
 const Description = styled.p`
+  grid-column: 2;
+  justify-self: center;
   text-align: justify;
   font-size: 14px;
   max-width: 400px;
-  padding: 48px;
+  margin: 48px 0px 48px 0px;
 `;
 
 const ButtonGroup = styled.div`
+  grid-column: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px;
+  margin: 48px 0px 48px 0px;
 `;
 
 export const LandingContent = withRouter(function({ history, onAddClick }) {

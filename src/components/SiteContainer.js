@@ -8,8 +8,6 @@ const SiteContainer = styled.div`
   align-items: center;
   /* overflow-y: auto; */
   background: linear-gradient(135deg, #7ec493 0%, #96d2e3 100%);
-  @media (min-width: 860px) {
-  }
 `;
 
 export default SiteContainer;
