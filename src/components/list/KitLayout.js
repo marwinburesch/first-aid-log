@@ -9,7 +9,7 @@ const Row = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Inventory = styled.div`
+const Inventory = styled.div`
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -18,7 +18,7 @@ export const Inventory = styled.div`
   grid-gap: 10px;
 `;
 
-export const InvItem = styled.div`
+const InvItem = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;

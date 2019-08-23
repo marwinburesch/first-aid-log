@@ -1,15 +1,42 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Inventory, InvItem } from '../components/list/KitLayout';
+// import { Inventory, InvItem } from '../components/list/KitLayout';
+
+const DropdownBox = styled.div`
+  width: 100%;
+  align-self: center;
+`;
 
 const Select = styled.select`
   width: 150px;
   margin-top: 30px;
+  margin-left: 5%;
+  align-self: center;
 `;
 
 const Amount = styled.input`
   width: 35px;
   border: solid 1px #c1b1aa;
+`;
+
+const Inventory = styled.div`
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, auto));
+  grid-gap: 10px;
+  align-self: center;
+`;
+
+const InvItem = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px #c1b1aa;
+  border-radius: 10px;
 `;
 
 export function Dropdown({ kits, onAmountChange, amounts }) {

@@ -11,7 +11,7 @@ const FormBox = styled.form`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 `;
 
 const Input = styled.input`
@@ -30,6 +30,7 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   width: 90%;
+  min-height: 100px;
   height: 130px;
   margin-top: 30px;
   border: solid 1px #54b6d2;
@@ -156,6 +157,7 @@ export function FileReport({ onSubmitReport, onClose, kits }) {
   return (
     <>
       <Dialog onClose={onClose}>
+        File a Report
         <FormBox onSubmit={handleSubmit}>
           <Input
             type="date"
