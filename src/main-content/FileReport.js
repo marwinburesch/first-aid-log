@@ -11,7 +11,6 @@ const FormBox = styled.form`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  /* box-sizing: border-box; */
 `;
 
 const Input = styled.input`

@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import { Inventory, InvItem } from '../components/list/KitLayout';
-
-const DropdownBox = styled.div`
-  width: 100%;
-  align-self: center;
-`;
 
 const Select = styled.select`
   width: 150px;
@@ -86,13 +80,3 @@ export function Dropdown({ kits, onAmountChange, amounts }) {
     </>
   );
 }
-
-// {
-//   "_idItem": "EF9012",
-//   "name": "Antiseptic",
-//   "type": "regular",
-//   "itemLastUsed": "2016-07-13",
-//   "itemBBF": "2025-06-05",
-//   "size": "200ml",
-//   "amount": 1
-// },
